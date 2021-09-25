@@ -3,6 +3,8 @@
 
 simply ran these three to run ga-her+ddpg(eventhough currently there is a small error that needs to be fixed. 
 
+Each command must be ran in a seperate terminal...
+
 First launch the moveit/rviz interface to have connection through simulation. 
 ```
 roslaunch aubo_i5_moveit_config demo.launch
