@@ -9,7 +9,7 @@
 - pip install tensorflow==1.14.0
 
 
-Then launch rviz and moveit: 
+Launch rviz and moveit by either launch commands: 
 
 For simulation:
 ```
