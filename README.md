@@ -13,3 +13,6 @@ roslaunch aubo_i5_moveit_config demo.launch
 Run this script `python2.7 moveit_motion_control.py`, must be running using python 2.7 otherwise this script will not work because moveit requires python 2.7
 
 `python3 ga.py` runs the training algorithm. 
+
+
+NOTE: checkout success_her+ddpg branch of this repo for refined code
