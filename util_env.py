@@ -47,8 +47,6 @@ def turn_on_gripper():
         turn_on_gripper_service(enable)
     except rospy.ServiceException as e:
         rospy.loginfo("Turn on Gripper service call failed:  {0}".format(e))
-
-
 def turn_off_gripper():
     """
     turn off the Gripper by calling the service
@@ -59,7 +57,6 @@ def turn_off_gripper():
         turn_off_gripper_service(enable)
     except rospy.ServiceException as e:
         rospy.loginfo("Turn off Gripper service call failed:  {0}".format(e))
-
 '''
 '''
 def spawn_object(object_name, model_position, model_sdf=None):
@@ -76,15 +73,12 @@ def spawn_object(object_name, model_position, model_sdf=None):
         sdf_fname = rospack.get_path('simulation') + "/meshes/environments/sdf/" + object_name + ".sdf"
         with open(sdf_fname, "r") as f:
             model_sdf = f.read()
-
     try:
         spawn_model = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
         spawn_model(object_name, model_sdf, "/", model_position, "world")
         print("SPAWN %s finished" % object_name)
     except rospy.ServiceException as e:
         rospy.loginfo("Spawn Model service call failed:  {0}".format(e))
-
-
 def spawn_urdf_object(object_name, model_position, model_urdf=None):
     """
     spawn object using gazebo service
@@ -99,15 +93,12 @@ def spawn_urdf_object(object_name, model_position, model_urdf=None):
         urdf_fname = rospack.get_path('simulation') + "/urdf/" + object_name + ".urdf"
         with open(urdf_fname, "r") as f:
             model_urdf = f.read()
-
     try:
         spawn_model = rospy.ServiceProxy("/gazebo/spawn_urdf_model", SpawnModel)
         spawn_model(object_name, model_urdf, "/", model_position, "world")
         print("SPAWN %s finished" % object_name)
     except rospy.ServiceException as e:
         rospy.loginfo("Spawn Model service call failed:  {0}".format(e))
-
-
 def delete_object(object_name):
     """
     delete object using gazebo service
@@ -151,7 +142,6 @@ def get_target_position():
         ReferenceFrame = "ground_plane"
         #object_resp_coordinates = model_coordinates(linkNameTarget, ReferenceFrame)
         #Object = np.array((object_resp_coordinates.link_state.pose.position.x, object_resp_coordinates.link_state.pose.position.y, object_resp_coordinates.link_state.pose.position.z))
-
     except rospy.ServiceException as e:
         rospy.loginfo("Get Link State service call failed:  {0}".format(e))
         print("Exception get link state")
@@ -181,11 +171,9 @@ def get_distance_gripper_to_object(height=None):
         Object = np.array((object_resp_coordinates.link_state.pose.position.x, 
                             object_resp_coordinates.link_state.pose.position.y,
                             object_resp_coordinates.link_state.pose.position.z if height is None else object_resp_coordinates.link_state.pose.position.z + height/2))
-
     except rospy.ServiceException as e:
         rospy.loginfo("Get Link State service call failed:  {0}".format(e))
         print("Exception get link state")
-
     try:
         model_coordinates = rospy.ServiceProxy('/gazebo/get_link_state', GetLinkState)
         LinkName = "vacuum_gripper_link"
@@ -194,7 +182,6 @@ def get_distance_gripper_to_object(height=None):
         Gripper = np.array((resp_coordinates_gripper.link_state.pose.position.x,
                             resp_coordinates_gripper.link_state.pose.position.y,
                             resp_coordinates_gripper.link_state.pose.position.z))
-
     except rospy.ServiceException as e:
         rospy.loginfo("Get Link State service call failed:  {0}".format(e))
         print("Exception get Gripper position")
@@ -203,7 +190,6 @@ def get_distance_gripper_to_object(height=None):
     Object = np.array((object_resp_coordinates.link_state.pose.position.x, 
                             object_resp_coordinates.link_state.pose.position.y,
                             object_resp_coordinates.link_state.pose.position.z if height is None else object_resp_coordinates.link_state.pose.position.z + height/2))
-
     return distance, Object
 '''
 
@@ -268,13 +254,10 @@ def get_obj_orient():
                                   object_resp_geometry.link_state.pose.orientation.x,
                                   object_resp_geometry.link_state.pose.orientation.y,
                                   object_resp_geometry.link_state.pose.orientation.z))
-
         object_orient = euler_from_quaternion(object_orient)
-
     except rospy.ServiceException as e:
         rospy.loginfo("Get Link State service call failed:  {0}".format(e))
         print("Exception get link state")
-
     try:
         model_coordinates = rospy.ServiceProxy('/gazebo/get_link_state', GetLinkState)
         LinkName = "vacuum_gripper_link"
@@ -284,21 +267,15 @@ def get_obj_orient():
                                    resp_coordinates_gripper.link_state.pose.orientation.x,
                                    resp_coordinates_gripper.link_state.pose.orientation.y,
                                    resp_coordinates_gripper.link_state.pose.orientation.z))
-
         gripper_orient = euler_from_quaternion(gripper_orient)
-
     except rospy.ServiceException as e:
         rospy.loginfo("Get Link State service call failed:  {0}".format(e))
         print("Exception get Gripper position")
-
     return object_orient, gripper_orient
-
-
 def get_link_state(link_name):
     """
     Get the Position and quaternion of link with ground plane as reference
     """
-
     try:
         model_geometry = rospy.ServiceProxy('/gazebo/get_link_state', GetLinkState)
         linkNameTarget = link_name
@@ -311,11 +288,9 @@ def get_link_state(link_name):
                              object_resp_geometry.link_state.pose.orientation.x,
                              object_resp_geometry.link_state.pose.orientation.y,
                              object_resp_geometry.link_state.pose.orientation.z))
-
     except rospy.ServiceException as e:
         rospy.loginfo("Get Link State service call failed:  {0}".format(e))
         print("Exception get link state")
-
     return geometry
     '''
 
