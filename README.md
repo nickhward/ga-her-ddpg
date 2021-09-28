@@ -13,7 +13,7 @@ Launch rviz and moveit by either launch commands:
 
 For simulation:
 ```
-roslaunch aubo_i5_robot_config demo.launch
+roslaunch aubo_i5_moveit_config demo.launch
 ```
 For real robot:
 ```
