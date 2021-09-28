@@ -320,8 +320,6 @@ class PickbotEnv(gym.GoalEnv):
         goal = self.goal.copy()
         self.accumulated_episode_reward += reward
         print("======================the reward==========================")
-        with open('logs_rewards.txt', 'a') as output:
-            output.write(str(reward) + "\n")
         print(reward)
         print('==========================================================')
         row_list = [reward, self.counter]

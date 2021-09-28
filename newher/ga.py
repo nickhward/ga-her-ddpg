@@ -12,7 +12,8 @@ def fitness_function(genome):
     
     global timesEvaluated
     timesEvaluated += 1
-
+    with open('logs_fitness_function_invoked.txt', 'a') as output:
+        output.write(str(timesEvaluated) + "\n")
     print("Fitness function invoked "+str(timesEvaluated)+" times")
 
     #setting parameter values using genome
