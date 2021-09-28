@@ -10,6 +10,7 @@ import sys
 import yaml
 import math
 import datetime
+import csv
 import rospkg
 from gym import utils, spaces
 from gym.utils import seeding
@@ -35,13 +36,12 @@ from geometry_msgs.msg import Point, PoseStamped
 from openai_ros.msg import RLExperimentInfo
 from moveit_msgs.msg import MoveGroupActionFeedback
 
-
-
 register(
-        id='AuboReach-v0',
-        entry_point='aubo_reach2_env:PickbotEnv',
-        max_episode_steps=500,
-    )
+    id='AuboReach-v0',
+    entry_point='aubo_reach2_env:PickbotEnv',
+    max_episode_steps=100,
+)
+
 
 # DEFINE ENVIRONMENT CLASS
 class PickbotEnv(gym.GoalEnv):
@@ -71,35 +71,48 @@ class PickbotEnv(gym.GoalEnv):
         # Assign MsgTypes
         self.joints_state = JointState()
         self.current_pose_moveit = PoseStamped()
-       
+
         self.movement_complete = Bool()
         self.movement_complete.data = False
         self.moveit_action_feedback = MoveGroupActionFeedback()
         self.feedback_list = []
 
-      
         self.publisher_to_moveit_object = JointArrayPub()
 
-    
-        
         rospy.Subscriber("/joint_states", JointState, self.joints_state_callback)
 
-        
         rospy.Subscriber("/pickbot/movement_complete", Bool, self.movement_complete_callback)
-        rospy.Subscriber("/move_group/feedback", MoveGroupActionFeedback, self.move_group_action_feedback_callback, queue_size=4)
-    
+        rospy.Subscriber("/move_group/feedback", MoveGroupActionFeedback, self.move_group_action_feedback_callback,
+                         queue_size=4)
+
         # Define Action and state Space and Reward Range
         """
         Action Space: Box Space with 6 values.
-        
+
         State Space: Box Space with 12 values. It is a numpy array with shape (12,)
         Reward Range: -infitity to infinity 
         """
- 
-        self.action_space = spaces.Box(-1.0, 1.0, shape=(6,), dtype="float32")
+        low_action = np.array([
+            -(1.7),
+            -(1.7),
+            -(1.7),
+            -(1.7),
+            -(1.7),
+            -(1.7)])
 
-        #self.goal = np.array([-1.7, -1.78, -1.77, 0.013, 1.69, 0.00023])
-        #self.goal = np.array([1.84, 0.71, -1.01, -1.07, -1.40, -1.66])
+        high_action = np.array([
+            1.7,
+            1.7,
+            1.7,
+            1.7,
+            1.7,
+            1.7])
+
+        self.action_space = spaces.Box(low_action, high_action)
+        # self.action_space = spaces.Box(-2.0, 2.0, shape=(6,), dtype="float32")
+
+        # self.goal = np.array([-1.7, -1.78, -1.77, 0.013, 1.69, 0.00023])
+        # self.goal = np.array([1.84, 0.71, -1.01, -1.07, -1.40, -1.66])
         self.goal = np.array([-0.503, 0.605, -1.676, -1.597, -1.527, -0.036])
 
         self.check_joint_states()
@@ -117,9 +130,10 @@ class PickbotEnv(gym.GoalEnv):
                 ),
             )
         )
-        
-        #self.observation_space = spaces.Box(low, high)
+        self.counter = 1
+        # self.observation_space = spaces.Box(low, high)
         self.reward_range = (-np.inf, np.inf)
+        # self.reward_range = (0, 0.9)
         print("------------------start seed-------------------------")
         self._seed()
         print("-------------------exit seed-----------------")
@@ -138,29 +152,30 @@ class PickbotEnv(gym.GoalEnv):
         print(self.csv_name)
         self.csv_success_exp = "success_exp" + datetime.datetime.now().strftime('%Y-%m-%d_%Hh%Mmin') + ".csv"
 
-        self.reset()
-    
+        # self.reset()
+
     def goal_distance(self, goal_a, goal_b):
         assert goal_a.shape == goal_b.shape
         return np.linalg.norm(goal_a - goal_b, axis=-1)
 
     def compute_reward(self, achieved_goal, goal, info):
         # Compute distance between goal and the achieved goal.
-        d =  self.goal_distance(achieved_goal, goal)
+        d = self.goal_distance(achieved_goal, goal)
         print("reward distance: {}".format(-d))
-        #if self.reward_type == "sparse":
+
+        # calc_d = 1 - (0.12 + 0.88 * (d / 10))
+
+        # if self.reward_type == "sparse":
         #    return -(d > self.distance_threshold).astype(np.float32)
-        #else:
+        # else:
         return -d
 
-    # Callback Functions for Subscribers to make topic values available each time the class is initialized 
+    # Callback Functions for Subscribers to make topic values available each time the class is initialized
     def joints_state_callback(self, msg):
         self.joints_state = msg
 
-
     def movement_complete_callback(self, msg):
         self.movement_complete = msg
-    
 
     def move_group_action_feedback_callback(self, msg):
         self.moveit_action_feedback = msg
@@ -169,10 +184,9 @@ class PickbotEnv(gym.GoalEnv):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
-
     def reset(self):
         """
-        Reset The Robot to its initial Position and restart the Controllers 
+        Reset The Robot to its initial Position and restart the Controllers
         1) Publish the initial joint_positions to MoveIt
         2) Busy waiting until the movement is completed by MoveIt
         3) set target_object to random position
@@ -184,7 +198,7 @@ class PickbotEnv(gym.GoalEnv):
         9) Return State
         """
         # print("Joint (reset): {}".format(np.around(self.joints_state.position, decimals=3)))
-        #init_joint_pos = [1.5, -1.2, 1.4, -1.87, -1.57, 0]
+        # init_joint_pos = [1.5, -1.2, 1.4, -1.87, -1.57, 0]
         init_joint_pos = [0, 0, 0, 0, 0, 0]
         self.publisher_to_moveit_object.set_joints(init_joint_pos)
 
@@ -209,27 +223,26 @@ class PickbotEnv(gym.GoalEnv):
             elapsed_time = rospy.Time.now() - start_ros_time
             if np.isclose(init_joint_pos, self.joints_state.position, rtol=0.0, atol=0.01).all():
                 break
-            elif elapsed_time > rospy.Duration(2): # time out
+            elif elapsed_time > rospy.Duration(2):  # time out
                 break
 
-        #self.set_target_object(random_object=self._random_object, random_position=self._random_position)
+        # self.set_target_object(random_object=self._random_object, random_position=self._random_position)
         self._check_all_systems_ready()
 
-        
         observation = self.get_obs()
 
         self._update_episode()
         return observation
-        
+
     def get_distance_gripper_to_object(self, gripper_joints, height=None):
-        
+
         Object = self.goal
         Gripper = np.asarray(gripper_joints)
-        
+
         distance = np.linalg.norm(Object - Gripper)
 
         return distance
-    
+
     def step(self, action):
         """
         Given the action selected by the learning algorithm,
@@ -245,25 +258,25 @@ class PickbotEnv(gym.GoalEnv):
         8) Return State, Reward, Done
         """
         print("############################")
-        print("before clipping action: {}".format(action))
-        clipped_action = np.clip(action, self.action_space.low, self.action_space.high)
-        print("after clipping action: {}".format(clipped_action))
+        # print("before clipping action: {}".format(action))
+        # clipped_action = np.clip(action, self.action_space.low, self.action_space.high)
+        # print("after clipping action: {}".format(clipped_action))
         self.movement_complete.data = False
-
+        # clipped_action = np.clip(action, self.action_space.low, self.action_space.high)
         # 1) Read last joint positions by getting the observation before acting
         old_observation = self.get_obs()
 
         # 2) Get the new joint positions according to chosen action (actions here are the joint increments)
-        if self._joint_increment is None:
-            next_action_position = clipped_action
-        else:
-            next_action_position = self.get_action_to_position(clipped_action, self.curr_joint)
+        # if self._joint_increment is None:
+        #  next_action_position = action
+        # else:
+        #  next_action_position = self.get_action_to_position(clipped_action, self.joints_state.position)
 
         print('=======================next_action=====================')
-        print(next_action_position)
+        print(action)
         print('============================================================')
         # 3) Move to position and wait for moveit to complete the execution
-        #self.publisher_to_moveit_object.pub_joints_to_moveit(next_action_position)
+        # self.publisher_to_moveit_object.pub_joints_to_moveit(next_action_position)
         self.publisher_to_moveit_object.pub_joints_to_moveit(action)
         # rospy.wait_for_message("/pickbot/movement_complete", Bool)
         while not self.movement_complete.data:
@@ -272,31 +285,34 @@ class PickbotEnv(gym.GoalEnv):
         start_ros_time = rospy.Time.now()
         while True:
             elapsed_time = rospy.Time.now() - start_ros_time
-            if np.isclose(next_action_position, self.joints_state.position, rtol=0.0, atol=0.01).all():
+            if np.isclose(action, self.joints_state.position, rtol=0.0, atol=0.01).all():
                 break
-            elif elapsed_time > rospy.Duration(2): # time out
+            elif elapsed_time > rospy.Duration(2):  # time out
                 break
         # time.sleep(s
 
         # 4) Get new observation and update min_distance after performing the action
         obs = self.get_obs()
-  
+
         done = False
         info = {
             "is_success": self._is_success(obs["achieved_goal"], self.goal),
         }
         reward = self.compute_reward(obs["achieved_goal"], self.goal, info)
-        
+        percentage = 1 - (0.12 + 0.88 * (abs(reward) / 10))
+        print("pecentage success possible: {}".format(percentage))
+        if self._is_success(obs["achieved_goal"], self.goal):
+            done = True
 
         if done:
             joint_pos = self.joints_state.position
             print("Joint in step (done): {}".format(np.around(joint_pos, decimals=3)))
         ### END of TEST ###
 
-        #self.accumulated_episode_reward += reward
-        
+        # self.accumulated_episode_reward += reward
+
         self.episode_steps += 1
-        #info = {}
+        # info = {}
         print("achieved--------------------------goal---------------------------")
         print(obs['achieved_goal'])
         print(self.goal)
@@ -304,8 +320,17 @@ class PickbotEnv(gym.GoalEnv):
         goal = self.goal.copy()
         self.accumulated_episode_reward += reward
         print("======================the reward==========================")
+        with open('logs_rewards.txt', 'a') as output:
+            output.write(str(reward) + "\n")
         print(reward)
         print('==========================================================')
+        row_list = [reward, self.counter]
+        with open('rewards.csv', 'a', encoding='UTF8', newline='') as f:
+            writer = csv.writer(f)
+
+            # write the header
+            writer.writerow(row_list)
+        self.counter = self.counter + 1
         return obs, reward, done, info
 
     def _check_all_systems_ready(self):
@@ -326,16 +351,16 @@ class PickbotEnv(gym.GoalEnv):
             except Exception as e:
                 rospy.logdebug("Current joint_states not ready yet, retrying==>" + str(e))
                 print("EXCEPTION: Joint States not ready yet, retrying.")
-   
+
     def get_action_to_position(self, action, last_position):
         """
         takes the last position and adds the increments for each joint
-        returns the new position       
+        returns the new position
         """
-        #action_position = np.asarray(last_position) + action
+        # action_position = np.asarray(last_position) + action
         action_position = last_position + action
         # clip action that is going to be published to -2.9 and 2.9 just to make sure to avoid loosing controll of controllers
-        x = np.clip(action_position, -(math.pi-0.05), math.pi-0.05)
+        x = np.clip(action_position, -(math.pi - 0.05), math.pi - 0.05)
 
         return x.tolist()
 
@@ -348,9 +373,9 @@ class PickbotEnv(gym.GoalEnv):
         8,9)        Force in contact sensor in Newtons
         10,11,12)   x, y, z Position of object?
         MISSING
-        10)     RGBD image 
-        
-        
+        10)     RGBD image
+
+
         """
         joint_states = self.joints_state
         print("==================================================================================")
@@ -367,31 +392,34 @@ class PickbotEnv(gym.GoalEnv):
                 print(np.around(joint_states.position, decimals=3))
                 sys.exit("Joint exceeds limit")
 
-
-        self.curr_joint = np.array([shoulder_joint_state, foreArm_joint_state, upperArm_joint_state, wrist1_joint_state, wrist2_joint_state, wrist3_joint_state])
+        self.curr_joint = np.array(
+            [shoulder_joint_state, foreArm_joint_state, upperArm_joint_state, wrist1_joint_state, wrist2_joint_state,
+             wrist3_joint_state])
         object = self.goal
-        #rel_pos = self.get_distance_gripper_to_object(self.joints_state.position)
-        
+        # rel_pos = self.get_distance_gripper_to_object(self.joints_state.position)
+
         achieved_goal = np.asarray(self.joints_state.position)
         rel_pos = achieved_goal - object
         relative_pose = np.asarray(rel_pos)
         obs = np.concatenate([achieved_goal, relative_pose])
         # Stack all information into Observations List
-        
+
         return {
             "observation": obs.copy(),
             "achieved_goal": achieved_goal.copy(),
             "desired_goal": self.goal.copy(),
         }
-        
 
     def _is_success(self, achieved_goal, desired_goal):
         d = self.goal_distance(achieved_goal, desired_goal)
-        return (d < 0.1).astype(np.float32)
-    
+        calc_d = 1 - (0.12 + 0.88 * (d / 10))
+        with open('logs_success_rate.txt', 'a') as output:
+            output.write(str(calc_d)+"\n")
+        return (calc_d >= 0.85).astype(np.float32)
+
     def _update_episode(self):
         """
-        Publishes the accumulated reward of the episode and 
+        Publishes the accumulated reward of the episode and
         increases the episode number by one.
         :return:
         """
@@ -423,5 +451,5 @@ class PickbotEnv(gym.GoalEnv):
         self.step_list.append(steps)
         list = str(reward) + ";" + str(episode_number) + ";" + str(steps) + "\n"
 
-        #with open(self.csv_name + '.csv', 'a') as csv:
-         #   csv.write(str(list))
+        with open(self.csv_name + '.csv', 'a') as csv:
+            csv.write(str(list))

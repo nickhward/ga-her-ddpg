@@ -66,14 +66,14 @@ def train(policy, rollout_worker, evaluator,
         if rank == 0:
             logger.dump_tabular()
 
-        # Saving 
-        #print('Success rate is {}'.format(rollout_worker.current_success_rate()))
+        # Saving
+        print('Success rate is {}'.format(rollout_worker.current_success_rate()))
 
         # save the policy if it's better than the previous ones
         success_rate = mpi_average(evaluator.current_success_rate())
 
         #checking if success rate has reached close to maximum, if so, return number of epochs
-        if success_rate >= 0.85: #0.85
+        if success_rate >= 0.70: #0.85
             logger.info('Saving epochs to file...')
             with open('epochs.txt', 'w') as output:
                 output.write(str(epoch+1))
