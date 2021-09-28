@@ -413,7 +413,7 @@ class PickbotEnv(gym.GoalEnv):
         calc_d = 1 - (0.12 + 0.88 * (d / 10))
         with open('logs_success_rate.txt', 'a') as output:
             output.write(str(calc_d)+"\n")
-        return (calc_d >= 0.85).astype(np.float32)
+        return (calc_d >= 0.70).astype(np.float32)
 
     def _update_episode(self):
         """

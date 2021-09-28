@@ -1,17 +1,36 @@
-# ga-drl-aubo
+# GA-DRL algorithm with robotic manipulator Aubo i5
 
-**Prerequisite**
-- Must have compiled the aubo robot github repo under the kinetic branch,which can be found here: https://github.com/AuboRobot/aubo_robot
+##Prerequisite
+- Must have compiled the aubo robot github repo under the kinetic branch,which can be found here: 
+```
+https://github.com/adarshsehgal/aubo_robot
+```
+- Ubuntu 16.04
 - Ros Kinetic
 - Python 2.7
-- Python verison >= 3.5 (I personal ran this code on python 3.5)
+- Python verison >= 3.5 (this code was run on python 3.5)
 - pip install gym==0.15.6
 - pip install tensorflow==1.14.0
+- openai_ros
+  - IMPORTANT: run rosdep install openai_ros EACH time you run the code (for each terminal)
+```
+https://github.com/adarshsehgal/openai_ros
+```
+
+##How to run the program
 
 
-Launch rviz and moveit by either launch commands: 
+**Before running roslaunch command, setup aubo robot repository with ros kinetic (link in pre requite section)**
+```
+cd catkin_workspace
+catkin build
+source deve;/setup.bash
+rosdep install openai_ros
+```
 
-For simulation:
+**Launch rviz and moveit by either launch commands:** 
+
+**For simulation:**
 ```
 roslaunch aubo_i5_moveit_config demo.launch
 ```

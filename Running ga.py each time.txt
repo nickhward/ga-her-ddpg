@@ -1,0 +1,6 @@
+cd catkin_workspace/
+source devel/setup.bash
+rosdep install openai_ros
+cd
+cd workspace/ga-drl-aubo-success-code/newher/
+python3 ga.py

@@ -37,6 +37,8 @@ def train(policy, rollout_worker, evaluator,
     logger.info("Training...")
     best_success_rate = -1
     for epoch in range(n_epochs):
+        with open('logs_common.txt', 'a') as output:
+            output.write("Total epochs are: " + str(n_epochs)+"\n")
         # train
         rollout_worker.clear_history()
         for _ in range(n_cycles):            

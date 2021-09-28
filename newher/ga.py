@@ -7,6 +7,27 @@ import os
 timesEvaluated = 0
 bestepochs = -1
 
+#remove log files
+#tracks how many times GA fitness function has been invoked
+if os.path.exists("logs_fitness_function_invoked.txt"):
+  os.remove("logs_fitness_function_invoked.txt")
+
+#tracks success rate for each action
+if os.path.exists("logs_success_rate.txt"):
+  os.remove("logs_success_rate.txt")
+
+#logs reward for all actions
+if os.path.exists("rewards.csv"):
+  os.remove("rewards.csv")
+
+#saves epoch value for success rate > threshold (train.py)
+if os.path.exists("epochs.txt"):
+  os.remove("epochs.txt")
+
+#logs general logging comments
+if os.path.exists("logs_common.txt"):
+  os.remove("logs_common.txt")
+
 # First, define function that will be used to evaluate the fitness
 def fitness_function(genome):
     
