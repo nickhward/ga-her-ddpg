@@ -29,7 +29,7 @@ pip3 install --upgrade pip
 ```
 - To avoid libmoveit_robot_trajectory.so error, follow below commands
   - replace the version number of 0.9.17 with what you have in below directory
-  - don’t change 0.9.15  - 
+  - don’t change 0.9.15 
 ```
 cd /opt/ros/kinetic/lib 
 sudo cp -r libmoveit_robot_trajectory.so.0.9.17 .. 
