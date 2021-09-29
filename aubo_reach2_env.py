@@ -39,7 +39,7 @@ from moveit_msgs.msg import MoveGroupActionFeedback
 register(
     id='AuboReach-v0',
     entry_point='aubo_reach2_env:PickbotEnv',
-    max_episode_steps=10, #100
+    max_episode_steps=1, #100
 )
 
 

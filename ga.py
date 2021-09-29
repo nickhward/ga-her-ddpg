@@ -28,6 +28,10 @@ if os.path.exists("epochs.txt"):
 if os.path.exists("logs_common.txt"):
   os.remove("logs_common.txt")
 
+#logs success rate after rollout workers complete
+if os.path.exists("logs_success_rate_rollout.txt"):
+  os.remove("logs_success_rate_rollout.txt")
+
 # First, define function that will be used to evaluate the fitness
 def fitness_function(genome):
     
@@ -56,7 +60,7 @@ def fitness_function(genome):
     noise_eps = decode_function(genome[56:66])
     if noise_eps > 1:
         noise_eps = 1
-    epochs_default = 10 #50
+    epochs_default = 1 #50
     env = 'AuboReach-v0'
     logdir ='/tmp/openaiGA'
     num_cpu = 4
