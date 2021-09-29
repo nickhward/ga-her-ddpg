@@ -1,7 +1,8 @@
 # GA-DRL algorithm with robotic manipulator Aubo i5
 
-##Prerequisite
-- Must have compiled the aubo robot github repo under the kinetic branch,which can be found here: 
+## Prerequisite
+- Must have compiled the aubo robot github repo under the kinetic branch,which can be found here:
+  - It is safe to remove auto_controller folder if you get build error with this package
 ```
 https://github.com/adarshsehgal/aubo_robot
 ```
@@ -9,22 +10,59 @@ https://github.com/adarshsehgal/aubo_robot
 - Ros Kinetic
 - Python 2.7
 - Python verison >= 3.5 (this code was run on python 3.5)
+- Aubo gym environment uses python2.7 with moveit
+- Genetic Algorithm ga.py uses python3.7
 - pip install gym==0.15.6
+- Install the packages needed to install gym
+```
+pip install scipy tqdm joblib cloudpickle click opencv-python
+```
 - pip install tensorflow==1.14.0
 - openai_ros
   - IMPORTANT: run rosdep install openai_ros EACH time you run the code (for each terminal)
 ```
 https://github.com/adarshsehgal/openai_ros
 ```
+- update pip3 to 21.0 or latest (if no errors)
+```
+pip3 install --upgrade pip
+```
+- To avoid libmoveit_robot_trajectory.so error, follow below commands
+  - replace the version number of 0.9.17 with what you have in below directory
+  - don’t change 0.9.15  - 
+```
+cd /opt/ros/kinetic/lib 
+sudo cp -r libmoveit_robot_trajectory.so.0.9.17 .. 
+sudo cp -r libmoveit_robot_state.so.0.9.17 ..
+cd .. 
+sudo mv libmoveit_robot_state.so.0.9.17 libmoveit_robot_state.so.0.9.15 
+sudo mv libmoveit_robot_model.so.0.9.17 libmoveit_robot_model.so.0.9.15
+sudo mv libmoveit_robot_trajectory.so.0.9.17 libmoveit_robot_trajectory.so.0.9.15
+sudo cp -r libmoveit_robot_state.so.0.9.15 lib/ 
+sudo cp -r libmoveit_robot_model.so.0.9.15 lib/ 
+sudo cp -r libmoveit_robot_trajectory.so.0.9.15 lib/
+```
+- To avoid error with installation of mpi4py package
+```
+sudo apt install libpython3.7-dev
+pip3 install mpi4py
+```
+- No need to install mujoco-py, since the code uses Rviz
+- Genetic algorithm library
+```
+pip3 install https://github.com/chovanecm/python-genetic-algorithm/archive/master.zip#egg=mchgenalg
+https://github.com/adarshsehgal/python-genetic-algorithm.git
+```
 
-##How to run the program
+
+## How to run the program
 
 
 **Before running roslaunch command, setup aubo robot repository with ros kinetic (link in pre requite section)**
 ```
 cd catkin_workspace
 catkin build
-source deve;/setup.bash
+source devel/setup.bash
 rosdep install openai_ros
 ```
 

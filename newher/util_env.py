@@ -22,8 +22,8 @@ from geometry_msgs.msg import Point, Pose, PoseStamped
 
 def get_target_object(object_type='free_shapes'):
     # get list of target object
-    targetobj_fname = os.path.dirname('/home/adarshsehgal/workspace/ga-drl-aubo/newher/object_information.yaml')
-    with open((targetobj_fname + '/object_information.yaml'), "r") as stream:
+    # targetobj_fname = os.path.dirname('/home/adarshsehgal/workspace/ga-drl-aubo/newher/object_information.yaml')
+    with open(('object_information.yaml'), "r") as stream:
         out = yaml.load(stream)
         filtered_object = list(filter(lambda x: x["type"] == object_type, out['items']))
         return filtered_object
