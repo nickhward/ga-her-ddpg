@@ -18,7 +18,7 @@ max_episode_steps #100 aubo_reach2.py
 success rate threshold #0.85 train.py, aubo_reach2.py
 self.T in rollouts.py -> causing one cycle in epoch to run forever #100
 n_cycles #50 config.py, DEFAULT_ENV_PARAMS
-n_batches # 50 config.py
+n_batches #40 config.py
 epochs_default #50 ga.py
 n_test_rollouts #50 config.py
 population_size #30 ga.py

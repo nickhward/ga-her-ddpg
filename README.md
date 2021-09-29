@@ -87,3 +87,14 @@ Run the genetic algorithm on her+ddpg while still in newher directory:
 ```
 python3 ga.py
 ```
+
+To make the program run faster, you can comment rviz below code in aubo robot repository:
+```
+cd ~/catkin_workspace/src/aubo_robot/aubo_i5_moveit_config/launch
+gedit demo.launch (or just manually open demo.launch in any text editory)
+
+ <!--<include file="$(find aubo_i5_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include> -->
+```
