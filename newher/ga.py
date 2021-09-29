@@ -56,7 +56,7 @@ def fitness_function(genome):
     noise_eps = decode_function(genome[56:66])
     if noise_eps > 1:
         noise_eps = 1
-    epochs_default = 2 #50
+    epochs_default = 50 #50
     env = 'AuboReach-v0'
     logdir ='/tmp/openaiGA'
     num_cpu = 4
@@ -135,7 +135,7 @@ ga.single_point_cross_over = False # default False
 # You can call the method several times and adjust some parameters
 # (e.g. number_of_pairs, selective_pressure, mutation_rate,
 # allow_random_parent, single_point_cross_over)
-ga.run(2) #30 default 1000
+ga.run(30) #30 default 1000
 best_genome, best_fitness = ga.get_best_genome()
 
 print("BEST CHROMOSOME IS")

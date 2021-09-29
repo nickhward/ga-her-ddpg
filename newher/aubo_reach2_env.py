@@ -170,6 +170,9 @@ class PickbotEnv(gym.GoalEnv):
         # else:
         return -d
 
+        # success = self._is_success(achieved_goal, goal).astype(np.float32)
+        # return success
+
     # Callback Functions for Subscribers to make topic values available each time the class is initialized
     def joints_state_callback(self, msg):
         self.joints_state = msg
@@ -299,14 +302,21 @@ class PickbotEnv(gym.GoalEnv):
             "is_success": self._is_success(obs["achieved_goal"], self.goal),
         }
         reward = self.compute_reward(obs["achieved_goal"], self.goal, info)
-        percentage = 1 - (0.12 + 0.88 * (abs(reward) / 10))
-        print("pecentage success possible: {}".format(percentage))
+        # percentage = 1 - (0.12 + 0.88 * (abs(reward) / 10))
+        # print("pecentage success possible: {}".format(percentage))
         if self._is_success(obs["achieved_goal"], self.goal):
             done = True
 
         if done:
             joint_pos = self.joints_state.position
             print("Joint in step (done): {}".format(np.around(joint_pos, decimals=3)))
+
+        # if not done:
+        #     reward = 1.0
+        # else:
+        #     reward = 0.0
+        #     joint_pos = self.joints_state.position
+        #     print("Joint in step (done): {}".format(np.around(joint_pos, decimals=3)))
         ### END of TEST ###
 
         # self.accumulated_episode_reward += reward

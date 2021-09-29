@@ -39,6 +39,7 @@ def train(policy, rollout_worker, evaluator,
     for epoch in range(n_epochs):
         with open('logs_common.txt', 'a') as output:
             output.write("Total epochs are: " + str(n_epochs)+"\n")
+            output.write("Calling rollout workers for training" + "\n")
         # train
         rollout_worker.clear_history()
         for _ in range(n_cycles):            
@@ -52,6 +53,8 @@ def train(policy, rollout_worker, evaluator,
             policy.update_target_net()
 
         # test
+        with open('logs_common.txt', 'a') as output:
+            output.write("starting test" + "\n")
         evaluator.clear_history()
         for _ in range(n_test_rollouts):
             evaluator.generate_rollouts()
