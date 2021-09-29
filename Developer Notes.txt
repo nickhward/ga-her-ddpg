@@ -1,0 +1,25 @@
+cd catkin_workspace/
+source devel/setup.bash
+rosdep install openai_ros
+cd
+cd workspace/ga-drl-aubo-success-code/
+python3 ga.py
+
+roslaunch aubo_i5_moveit_config demo.launch
+
+python2.7 moveit_motion_control.py
+
+
+python3 -m train --env=AuboReach-v0 --logdir=/tmp/openaiGA --n_epochs=1 --num_cpu=4
+
+
+Parameters changed for Testing:
+max_episode_steps #100 aubo_reach2.py
+success rate threshold #0.85 train.py, aubo_reach2.py
+self.T in rollouts.py -> causing one cycle in epoch to run forever #100
+n_cycles #50 config.py
+n_batches # 50 config.py
+epochs_default #50 ga.py
+
+
+ga run (30) -> epoch (50) -> cycle (50) -> episode (100) -> self.T in rollout.py (500) -> batch (40)

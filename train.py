@@ -41,14 +41,20 @@ def train(policy, rollout_worker, evaluator,
             output.write("Total epochs are: " + str(n_epochs)+"\n")
             output.write("Calling rollout workers for training" + "\n")
         # train
-        rollout_worker.clear_history()
-        for _ in range(n_cycles):            
+        # rollout_worker.clear_history()
+        for cycle in range(n_cycles):
             #logger.info(config.DEFAULT_PARAMS['_polyak'])
             #config.DEFAULT_PARAMS['_polyak'] = round(random.uniform(0, 1), 3)
             #logger.info('polyak is :')
+            with open('logs_common.txt', 'a') as output:
+                output.write("cycle " + str(cycle) + "\n")
             episode = rollout_worker.generate_rollouts()
+            with open('logs_common.txt', 'a') as output:
+                output.write("episode generated for cycle " + str(cycle) + "\n")
             policy.store_episode(episode)
-            for _ in range(n_batches):
+            for batch in range(n_batches):
+                with open('logs_common.txt', 'a') as output:
+                    output.write("batch " + str(batch) + "\n")
                 policy.train()
             policy.update_target_net()
 
@@ -78,8 +84,10 @@ def train(policy, rollout_worker, evaluator,
         success_rate = mpi_average(evaluator.current_success_rate())
 
         #checking if success rate has reached close to maximum, if so, return number of epochs
-        if success_rate >= 0.70: #0.85
+        if success_rate >= 0.60: #0.85
             logger.info('Saving epochs to file...')
+            with open('logs_common.txt', 'a') as output:
+                output.write("Successful epoch value FOUND at " + str(epoch+1) + "epochs" + "\n")
             with open('epochs.txt', 'w') as output:
                 output.write(str(epoch+1))
             #Exit training if maximum success rate reached
@@ -198,10 +206,10 @@ def launch(
         rollout_params[name] = params[name]
         eval_params[name] = params[name]
 
-    rollout_worker = RolloutWorker(params['make_env'], policy, dims, logger, **rollout_params)
+    rollout_worker = RolloutWorker(params['make_env'], policy, dims, **rollout_params)
     rollout_worker.seed(rank_seed)
 
-    evaluator = RolloutWorker(params['make_env'], policy, dims, logger, **eval_params)
+    evaluator = RolloutWorker(params['make_env'], policy, dims, **eval_params)
     evaluator.seed(rank_seed)
 
     epochs = train(

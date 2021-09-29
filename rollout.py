@@ -10,7 +10,7 @@ from util import convert_episode_to_batch_major, store_args
 class RolloutWorker:
 
     @store_args
-    def __init__(self, make_env, policy, dims, T, rollout_batch_size=1,
+    def __init__(self, make_env, policy, dims, rollout_batch_size=1,
                  exploit=False, use_target_net=False, compute_Q=False, noise_eps=0,
                  random_eps=0, history_len=100, render=False, **kwargs):
         """Rollout worker generates experience by interacting with one or many environments.
@@ -30,7 +30,7 @@ class RolloutWorker:
             history_len (int): length of history for statistics smoothing
             render (boolean): whether or not to render the rollouts
         """
-        self.T = 500
+        self.T = 10 #100
         self.envs = [make_env() for _ in range(rollout_batch_size)]
         assert self.T > 0
 
