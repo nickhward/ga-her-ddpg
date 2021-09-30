@@ -3,6 +3,8 @@ from mchgenalg import GeneticAlgorithm
 import mchgenalg
 import numpy as np
 import os
+import time
+start_time = time.time()
 
 timesEvaluated = 0
 bestepochs = -1
@@ -60,10 +62,19 @@ def fitness_function(genome):
     noise_eps = decode_function(genome[56:66])
     if noise_eps > 1:
         noise_eps = 1
-    epochs_default = 20 #50
+    epochs_default = 10 #50
     env = 'AuboReach-v0'
     logdir ='/tmp/openaiGA'
-    num_cpu = 4
+    num_cpu = 6
+
+    with open('logs_common.txt', 'a') as output:
+        output.write("======Setting Parameters value========="+ "\n")
+        output.write("Tau = " + str(polyak))
+        output.write(" || Gamma = " + str(gamma))
+        output.write(" || Q_learning = " + str(Q_lr))
+        output.write(" || pi_learning = " + str(pi_lr))
+        output.write(" || random_epsilon = " + str(random_eps))
+        output.write(" || noise_epsilon = " + str(noise_eps) + "\n")
 
     query = "python3 -m train --env="+env+" --logdir="+logdir+" --n_epochs="+str(epochs_default)+" --num_cpu="+str(num_cpu) + " --polyak_value="+ str(polyak) + " --gamma_value=" + str(gamma) + " --q_learning=" + str(Q_lr) + " --pi_learning=" + str(pi_lr) + " --random_epsilon=" + str(random_eps) + " --noise_epsilon=" + str(noise_eps)
 
@@ -116,7 +127,7 @@ def decode_function(genome_partial):
     return prod/1000
 
 # Configure the algorithm:
-population_size = 10 #30
+population_size = 5 #30
 genome_length = 66
 ga = GeneticAlgorithm(fitness_function)
 ga.generate_binary_population(size=population_size, genome_length=genome_length)
@@ -157,3 +168,10 @@ population = ga.population
 
 # and the fitness of each element:
 fitness_vector = ga.get_fitness_vector()
+
+# time tracking
+programExecutionTime = time.time() - start_time #seconds
+programExecutionTime = programExecutionTime/(60*60) #hours
+with open('logs_common.txt', 'a') as output:
+    output.write("======Total program execution time is " + programExecutionTime +" hours=========" + "\n")
+print("--- %s seconds ---" % (time.time() - start_time))

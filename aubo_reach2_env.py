@@ -39,7 +39,7 @@ from moveit_msgs.msg import MoveGroupActionFeedback
 register(
     id='AuboReach-v0',
     entry_point='aubo_reach2_env:PickbotEnv',
-    max_episode_steps=20, #100
+    max_episode_steps=5, #100
 )
 
 
@@ -419,11 +419,16 @@ class PickbotEnv(gym.GoalEnv):
         }
 
     def _is_success(self, achieved_goal, desired_goal):
+        threshold = 0.65
         d = self.goal_distance(achieved_goal, desired_goal)
         calc_d = 1 - (0.12 + 0.88 * (d / 10))
         with open('logs_success_rate.txt', 'a') as output:
-            output.write(str(calc_d)+"\n")
-        return (calc_d >= 0.85).astype(np.float32)
+            output.write(str(calc_d))
+            if calc_d >= threshold:
+                output.write(" :SUCCESS" + "\n")
+            else:
+                output.write("\n")
+        return (calc_d >= threshold).astype(np.float32)
 
     def _update_episode(self):
         """

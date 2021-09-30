@@ -39,6 +39,7 @@ def train(policy, rollout_worker, evaluator,
     for epoch in range(n_epochs):
         with open('logs_common.txt', 'a') as output:
             output.write("Total epochs are: " + str(n_epochs)+"\n")
+            output.write("Current epoch: " + str(epoch) + "\n")
             output.write("Calling rollout workers for training" + "\n")
         # train
         # rollout_worker.clear_history()
