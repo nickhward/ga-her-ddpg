@@ -62,7 +62,7 @@ def fitness_function(genome):
     noise_eps = decode_function(genome[56:66])
     if noise_eps > 1:
         noise_eps = 1
-    epochs_default = 10 #50
+    epochs_default = 7 #50
     env = 'AuboReach-v0'
     logdir ='/tmp/openaiGA'
     num_cpu = 6

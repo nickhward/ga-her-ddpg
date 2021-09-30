@@ -1,2 +1,2142 @@
 ======Setting Parameters value=========
-Tau = 0.456 || Gamma = 0.662 || Q_learning = 0.858 || pi_learning = 0.809 || random_epsilon = 0.042 || noise_epsilon = 0.749
+Tau = 0.334 || Gamma = 0.132 || Q_learning = 0.938 || pi_learning = 0.144 || random_epsilon = 0.456 || noise_epsilon = 0.99
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.224 || Gamma = 0.022 || Q_learning = 1 || pi_learning = 0.274 || random_epsilon = 0.485 || noise_epsilon = 0.524
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 1
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 2
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 3
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 4
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 5
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 6
+Calling rollout workers for training
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.01 || Gamma = 0.495 || Q_learning = 1 || pi_learning = 0.648 || random_epsilon = 0.712 || noise_epsilon = 0.514
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 7
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4

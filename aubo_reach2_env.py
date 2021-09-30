@@ -338,7 +338,7 @@ class PickbotEnv(gym.GoalEnv):
 
             # write the header
             writer.writerow(row_list)
-        self.counter = self.counter + 1
+            self.counter = self.counter + 1
         return obs, reward, done, info
 
     def _check_all_systems_ready(self):
@@ -419,7 +419,7 @@ class PickbotEnv(gym.GoalEnv):
         }
 
     def _is_success(self, achieved_goal, desired_goal):
-        threshold = 0.65
+        threshold = 0.62
         d = self.goal_distance(achieved_goal, desired_goal)
         calc_d = 1 - (0.12 + 0.88 * (d / 10))
         with open('logs_success_rate.txt', 'a') as output:
