@@ -39,7 +39,7 @@ from moveit_msgs.msg import MoveGroupActionFeedback
 register(
     id='AuboReach-v1',
     entry_point='aubo_reach4_env:PickbotEnv',
-    max_episode_steps=5, #100
+    max_episode_steps=50, #100
 )
 
 
@@ -297,12 +297,12 @@ class PickbotEnv(gym.GoalEnv):
 
         done = False
         info = {
-            "is_success": self._is_success(obs["achieved_goal"], self.goal),
+            "is_success": self._is_success(np.asarray(action), self.goal),
         }
-        reward = self.compute_reward(obs["achieved_goal"], self.goal, info)
+        reward = self.compute_reward(np.asarray(action), self.goal, info)
         # percentage = 1 - (0.12 + 0.88 * (abs(reward) / 10))
         # print("pecentage success possible: {}".format(percentage))
-        if self._is_success(obs["achieved_goal"], self.goal):
+        if self._is_success(np.asarray(action), self.goal):
             done = True
 
         if done:

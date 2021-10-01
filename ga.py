@@ -45,24 +45,24 @@ def fitness_function(genome):
 
     #setting parameter values using genome
     polyak = decode_function(genome[0:10])
-    if polyak > 1:
-        polyak = 1
+    if polyak >= 1:
+        polyak = 0.999 #1
     gamma = decode_function(genome[11:21])
-    if gamma > 1:
-        gamma = 1
+    if gamma >= 1:
+        gamma = 0.999 #1
     Q_lr = decode_function(genome[22:33])
-    if Q_lr > 1:
-        Q_lr = 1
+    if Q_lr >= 1:
+        Q_lr = 0.999 #1
     pi_lr = decode_function(genome[34:44])
-    if pi_lr > 1:
-        pi_lr = 1
+    if pi_lr >= 1:
+        pi_lr = 0.999 #1
     random_eps = decode_function(genome[45:55])
-    if random_eps > 1:
-        random_eps = 1
+    if random_eps >= 1:
+        random_eps = 0.999 #1
     noise_eps = decode_function(genome[56:66])
-    if noise_eps > 1:
-        noise_eps = 1
-    epochs_default = 7 #50
+    if noise_eps >= 1:
+        noise_eps = 0.999 #1
+    epochs_default = 25 #50
     env = 'AuboReach-v1' #'AuboReach-v0'
     logdir ='/tmp/openaiGA'
     num_cpu = 6
@@ -127,7 +127,7 @@ def decode_function(genome_partial):
     return prod/1000
 
 # Configure the algorithm:
-population_size = 5 #30
+population_size = 25 #30
 genome_length = 66
 ga = GeneticAlgorithm(fitness_function)
 ga.generate_binary_population(size=population_size, genome_length=genome_length)
@@ -150,7 +150,7 @@ ga.single_point_cross_over = False # default False
 # You can call the method several times and adjust some parameters
 # (e.g. number_of_pairs, selective_pressure, mutation_rate,
 # allow_random_parent, single_point_cross_over)
-ga.run(10) #30 default 1000
+ga.run(20) #30 default 1000
 best_genome, best_fitness = ga.get_best_genome()
 
 print("BEST CHROMOSOME IS")
