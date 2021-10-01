@@ -15,7 +15,7 @@ https://github.com/adarshsehgal/aubo_robot
 - pip install gym==0.15.6
 - Install the packages needed to install gym
 ```
-pip install scipy tqdm joblib cloudpickle click opencv-python
+pip3 install scipy tqdm joblib cloudpickle click opencv-python
 ```
 - pip install tensorflow==1.14.0
 - openai_ros

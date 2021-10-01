@@ -6,15 +6,18 @@ import logger
 from ddpg import DDPG
 from her import make_sample_her_transitions
 for env in gym.envs.registry.env_specs:
-     if 'AuboReach-v0' in env:
+     if 'AuboReach-v0' in env or 'AuboReach-v1' in env:
           print('Remove {} from registry'.format(env))
           del gym.registry.env_specs[env]
 
-
 from aubo_reach2_env import PickbotEnv
+from aubo_reach4_env import PickbotEnv
 
 DEFAULT_ENV_PARAMS = {
     'AuboReach-v0': {
+        'n_cycles': 5,
+    },
+    'AuboReach-v1': {
         'n_cycles': 5,
     },
 }
