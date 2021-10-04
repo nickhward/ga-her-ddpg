@@ -98,3 +98,7 @@ gedit demo.launch (or just manually open demo.launch in any text editory)
     <arg name="debug" value="$(arg debug)"/>
   </include> -->
 ```
+
+Gym Environments available for GA-DRL execution (can be changes in ga.py):
+- AuboReach-v0 - executes joint states with moveit
+- AuboReach-v1 - only calculates actions but does not execute joint states (increased learning speed)

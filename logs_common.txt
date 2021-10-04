@@ -1,26 +1,994 @@
 ======Setting Parameters value=========
-Tau = 0.698 || Gamma = 0.159 || Q_learning = 0.999 || pi_learning = 0.815 || random_epsilon = 0.802 || noise_epsilon = 0.538
-Total epochs are: 25
+Tau = 0.082 || Gamma = 0.833 || Q_learning = 0.999 || pi_learning = 0.107 || random_epsilon = 0.579 || noise_epsilon = 0.234
+Total epochs are: 1
 Current epoch: 0
 Calling rollout workers for training
 cycle 0
-Total epochs are: 25
+Total epochs are: 1
 Current epoch: 0
 Calling rollout workers for training
 cycle 0
-Total epochs are: 25
+Total epochs are: 1
 Current epoch: 0
 Calling rollout workers for training
 cycle 0
-Total epochs are: 25
+Total epochs are: 1
 Current epoch: 0
 Calling rollout workers for training
 cycle 0
-Total epochs are: 25
-Current epoch: 0
-Calling rollout workers for training
-Total epochs are: 25
+Total epochs are: 1
 Current epoch: 0
 Calling rollout workers for training
 cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.145 || Gamma = 0.549 || Q_learning = 0.138 || pi_learning = 0.298 || random_epsilon = 0.458 || noise_epsilon = 0.764
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.436 || Gamma = 0.449 || Q_learning = 0.999 || pi_learning = 0.441 || random_epsilon = 0.643 || noise_epsilon = 0.604
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.426 || Gamma = 0.723 || Q_learning = 0.358 || pi_learning = 0.103 || random_epsilon = 0.375 || noise_epsilon = 0.509
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.183 || Gamma = 0.879 || Q_learning = 0.68 || pi_learning = 0.059 || random_epsilon = 0.499 || noise_epsilon = 0.579
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.018 || Gamma = 0.545 || Q_learning = 0.416 || pi_learning = 0.554 || random_epsilon = 0.579 || noise_epsilon = 0.75
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.209 || Gamma = 0.869 || Q_learning = 0.999 || pi_learning = 0.363 || random_epsilon = 0.49 || noise_epsilon = 0.248
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.219 || Gamma = 0.804 || Q_learning = 0.999 || pi_learning = 0.106 || random_epsilon = 0.385 || noise_epsilon = 0.737
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.017 || Gamma = 0.069 || Q_learning = 0.387 || pi_learning = 0.419 || random_epsilon = 0.734 || noise_epsilon = 0.186
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.467 || Gamma = 0.833 || Q_learning = 0.999 || pi_learning = 0.107 || random_epsilon = 0.586 || noise_epsilon = 0.057
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.016 || Gamma = 0.549 || Q_learning = 0.783 || pi_learning = 0.362 || random_epsilon = 0.195 || noise_epsilon = 0.748
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.018 || Gamma = 0.768 || Q_learning = 0.999 || pi_learning = 0.299 || random_epsilon = 0.098 || noise_epsilon = 0.25
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.209 || Gamma = 0.613 || Q_learning = 0.266 || pi_learning = 0.234 || random_epsilon = 0.975 || noise_epsilon = 0.749
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.066 || Gamma = 0.097 || Q_learning = 0.399 || pi_learning = 0.104 || random_epsilon = 0.139 || noise_epsilon = 0.12
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.193 || Gamma = 0.837 || Q_learning = 0.999 || pi_learning = 0.315 || random_epsilon = 0.226 || noise_epsilon = 0.746
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.002 || Gamma = 0.805 || Q_learning = 0.999 || pi_learning = 0.554 || random_epsilon = 0.202 || noise_epsilon = 0.25
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.213 || Gamma = 0.577 || Q_learning = 0.687 || pi_learning = 0.331 || random_epsilon = 0.835 || noise_epsilon = 0.749
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.088 || Gamma = 0.355 || Q_learning = 0.923 || pi_learning = 0.043 || random_epsilon = 0.339 || noise_epsilon = 0.684
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.155 || Gamma = 0.597 || Q_learning = 0.999 || pi_learning = 0.075 || random_epsilon = 0.59 || noise_epsilon = 0.19
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.146 || Gamma = 0.581 || Q_learning = 0.783 || pi_learning = 0.299 || random_epsilon = 0.195 || noise_epsilon = 0.762
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.081 || Gamma = 0.801 || Q_learning = 0.999 || pi_learning = 0.362 || random_epsilon = 0.451 || noise_epsilon = 0.236
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.531 || Gamma = 0.868 || Q_learning = 0.999 || pi_learning = 0.298 || random_epsilon = 0.45 || noise_epsilon = 0.762
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+======Setting Parameters value=========
+Tau = 0.08 || Gamma = 0.769 || Q_learning = 0.303 || pi_learning = 0.355 || random_epsilon = 0.591 || noise_epsilon = 0.204
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 1
+Current epoch: 0
+Calling rollout workers for training
 cycle 0

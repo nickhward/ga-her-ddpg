@@ -34,6 +34,10 @@ if os.path.exists("logs_common.txt"):
 if os.path.exists("logs_success_rate_rollout.txt"):
   os.remove("logs_success_rate_rollout.txt")
 
+#logs success being set in rollout.py
+if os.path.exists("logs_common_is_success.txt"):
+  os.remove("logs_common_is_success.txt")
+
 # First, define function that will be used to evaluate the fitness
 def fitness_function(genome):
     
@@ -62,7 +66,7 @@ def fitness_function(genome):
     noise_eps = decode_function(genome[56:66])
     if noise_eps >= 1:
         noise_eps = 0.999 #1
-    epochs_default = 25 #50
+    epochs_default = 1 #50
     env = 'AuboReach-v1' #'AuboReach-v0'
     logdir ='/tmp/openaiGA'
     num_cpu = 6
@@ -127,7 +131,7 @@ def decode_function(genome_partial):
     return prod/1000
 
 # Configure the algorithm:
-population_size = 25 #30
+population_size = 5 #30
 genome_length = 66
 ga = GeneticAlgorithm(fitness_function)
 ga.generate_binary_population(size=population_size, genome_length=genome_length)
@@ -150,7 +154,7 @@ ga.single_point_cross_over = False # default False
 # You can call the method several times and adjust some parameters
 # (e.g. number_of_pairs, selective_pressure, mutation_rate,
 # allow_random_parent, single_point_cross_over)
-ga.run(20) #30 default 1000
+ga.run(10) #30 default 1000
 best_genome, best_fitness = ga.get_best_genome()
 
 print("BEST CHROMOSOME IS")

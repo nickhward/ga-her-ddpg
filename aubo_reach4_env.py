@@ -39,7 +39,7 @@ from moveit_msgs.msg import MoveGroupActionFeedback
 register(
     id='AuboReach-v1',
     entry_point='aubo_reach4_env:PickbotEnv',
-    max_episode_steps=50, #100
+    max_episode_steps=1, #100
 )
 
 
@@ -67,6 +67,7 @@ class PickbotEnv(gym.GoalEnv):
         self._random_position = random_position
         self._use_object_type = use_object_type
         self._populate_object = populate_object
+        self.rewardThreshold = 0.62
 
         # Assign MsgTypes
         self.joints_state = JointState()
@@ -302,6 +303,12 @@ class PickbotEnv(gym.GoalEnv):
         reward = self.compute_reward(np.asarray(action), self.goal, info)
         # percentage = 1 - (0.12 + 0.88 * (abs(reward) / 10))
         # print("pecentage success possible: {}".format(percentage))
+        with open('logs_success_rate.txt', 'a') as output:
+            output.write(str(self.calculatedReward))
+            if self.calculatedReward >= self.rewardThreshold:
+                output.write(" :SUCCESS" + "\n")
+            else:
+                output.write("\n")
         if self._is_success(np.asarray(action), self.goal):
             done = True
 
@@ -417,16 +424,10 @@ class PickbotEnv(gym.GoalEnv):
         }
 
     def _is_success(self, achieved_goal, desired_goal):
-        threshold = 0.62
         d = self.goal_distance(achieved_goal, desired_goal)
         calc_d = 1 - (0.12 + 0.88 * (d / 10))
-        with open('logs_success_rate.txt', 'a') as output:
-            output.write(str(calc_d))
-            if calc_d >= threshold:
-                output.write(" :SUCCESS" + "\n")
-            else:
-                output.write("\n")
-        return (calc_d >= threshold).astype(np.float32)
+        self.calculatedReward = calc_d
+        return (calc_d >= self.rewardThreshold).astype(np.float32)
 
     def _update_episode(self):
         """
