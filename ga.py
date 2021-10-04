@@ -31,8 +31,8 @@ if os.path.exists("logs_common.txt"):
   os.remove("logs_common.txt")
 
 #logs success rate after rollout workers complete
-if os.path.exists("logs_success_rate_rollout.txt"):
-  os.remove("logs_success_rate_rollout.txt")
+if os.path.exists("logs_success_rate_per_epoch.txt"):
+  os.remove("logs_success_rate_per_epoch.txt")
 
 #logs success being set in rollout.py
 if os.path.exists("logs_common_is_success.txt"):
@@ -66,7 +66,7 @@ def fitness_function(genome):
     noise_eps = decode_function(genome[56:66])
     if noise_eps >= 1:
         noise_eps = 0.999 #1
-    epochs_default = 1 #50
+    epochs_default = 7 #50
     env = 'AuboReach-v1' #'AuboReach-v0'
     logdir ='/tmp/openaiGA'
     num_cpu = 6
@@ -87,6 +87,11 @@ def fitness_function(genome):
     os.system(query)
     #epochs = train.launch(env, logdir, epochs_default, num_cpu, 0, 'future', 5, 1, polyak, gamma)
     #env, logdir, n_epochs, num_cpu, seed, replay_strategy, policy_save_interval, clip_return   
+
+    ##tracking time to execute one run
+    programExecutionTime = time.time() - start_time  # seconds
+    with open('logs_common.txt', 'a') as output:
+        output.write("======Run " + str(timesEvaluated) + " took " + str(programExecutionTime) + " minutes to complete=========" + "\n")
 
     file = open('epochs.txt', 'r')
 
@@ -177,5 +182,5 @@ fitness_vector = ga.get_fitness_vector()
 programExecutionTime = time.time() - start_time #seconds
 programExecutionTime = programExecutionTime/(60*60) #hours
 with open('logs_common.txt', 'a') as output:
-    output.write("======Total program execution time is " + programExecutionTime +" hours=========" + "\n")
+    output.write("======Total program execution time is " + str(programExecutionTime) +" hours=========" + "\n")
 print("--- %s seconds ---" % (time.time() - start_time))
