@@ -1,5 +1,17 @@
 # GA-DRL algorithm with robotic manipulator Aubo i5
 
+# GA-DRL paper citation
+```
+@inproceedings{sehgal2019deep,
+  title={Deep reinforcement learning using genetic algorithm for parameter optimization},
+  author={Sehgal, Adarsh and La, Hung and Louis, Sushil and Nguyen, Hai},
+  booktitle={2019 Third IEEE International Conference on Robotic Computing (IRC)},
+  pages={596--601},
+  year={2019},
+  organization={IEEE}
+}
+```
+
 ## Prerequisite
 - Must have compiled the aubo robot github repo under the kinetic branch,which can be found here:
   - It is safe to remove auto_controller folder if you get build error with this package

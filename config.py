@@ -18,7 +18,7 @@ DEFAULT_ENV_PARAMS = {
         'n_cycles': 5,
     },
     'AuboReach-v1': {
-        'n_cycles': 5,
+        'n_cycles': 25,
     },
 }
 #was 10 n_cycles
@@ -39,11 +39,11 @@ DEFAULT_PARAMS = {
     'scope': 'ddpg',  # can be tweaked for testing
     'relative_goals': False,
     # training
-    'n_cycles': 5, #50  # per epoch
+    'n_cycles': 25, #50  # per epoch
     'rollout_batch_size': 2,  # per mpi thread
-    'n_batches': 2,  # training batches per cycle
+    'n_batches': 20,  # training batches per cycle
     'batch_size': 256,  # per mpi thread, measured in transitions and reduced to even multiple of chunk_length.
-    'n_test_rollouts': 7, #50  # number of test rollouts per epoch, each consists of rollout_batch_size rollouts
+    'n_test_rollouts': 20, #50  # number of test rollouts per epoch, each consists of rollout_batch_size rollouts
     'test_with_polyak': False,  # run test episodes with the target network
     # exploration
     'random_eps': 0.3,  # percentage of time a random action is taken

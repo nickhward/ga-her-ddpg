@@ -12,7 +12,7 @@ from mpi_moments import mpi_moments
 import config as config
 from rollout import RolloutWorker
 from util import mpi_fork
-
+import time
 
 
 from subprocess import CalledProcessError
@@ -39,6 +39,7 @@ def train(policy, rollout_worker, evaluator,
         output.write("==========Training============" + "\n")
     best_success_rate = -1
     for epoch in range(n_epochs):
+        start_time = time.time()
         with open('logs_common.txt', 'a') as output:
             output.write("Total epochs are: " + str(n_epochs)+"\n")
             output.write("Current epoch: " + str(epoch) + "\n")
@@ -81,6 +82,13 @@ def train(policy, rollout_worker, evaluator,
 
         if rank == 0:
             logger.dump_tabular()
+
+        #calculate each epoch time
+        programExecutionTime = time.time() - start_time  # seconds
+        programExecutionTime = programExecutionTime / (60)  # minutes
+        with open('logs_common.txt', 'a') as output:
+            output.write("======Epoch " + str(epoch) + " took " + str(
+                programExecutionTime) + " minutes to complete=========" + "\n")
 
         # Saving
         # print('Success rate is {}'.format(rollout_worker.current_success_rate()))
