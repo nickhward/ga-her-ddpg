@@ -43,7 +43,7 @@ DEFAULT_PARAMS = {
     'rollout_batch_size': 2,  # per mpi thread
     'n_batches': 2,  # training batches per cycle
     'batch_size': 256,  # per mpi thread, measured in transitions and reduced to even multiple of chunk_length.
-    'n_test_rollouts': 0, #50  # number of test rollouts per epoch, each consists of rollout_batch_size rollouts
+    'n_test_rollouts': 7, #50  # number of test rollouts per epoch, each consists of rollout_batch_size rollouts
     'test_with_polyak': False,  # run test episodes with the target network
     # exploration
     'random_eps': 0.3,  # percentage of time a random action is taken

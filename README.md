@@ -102,3 +102,14 @@ gedit demo.launch (or just manually open demo.launch in any text editory)
 Gym Environments available for GA-DRL execution (can be changes in ga.py):
 - AuboReach-v0 - executes joint states with moveit
 - AuboReach-v1 - only calculates actions but does not execute joint states (increased learning speed)
+
+## How to plot results:
+For one set of parameter values and for one DRL run, plot results using:
+```
+python3 plot.py <dir>
+```
+where, dir = /tmp/openaiGA in this case, as mentioned in ga.py file. You can provide any log directory.
+- If you are testing one set of parameters, in train.py, comment out the code which stops the system as soon as it reaches threshold success rate. 
+```
+sys.exit()
+```

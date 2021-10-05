@@ -14,7 +14,7 @@ bestepochs = -1
 if os.path.exists("logs_fitness_function_invoked.txt"):
   os.remove("logs_fitness_function_invoked.txt")
 
-#tracks success rate for each action
+#tracks success rate for each action (all steps throughout the program execution)
 if os.path.exists("logs_success_rate.txt"):
   os.remove("logs_success_rate.txt")
 
@@ -30,13 +30,17 @@ if os.path.exists("epochs.txt"):
 if os.path.exists("logs_common.txt"):
   os.remove("logs_common.txt")
 
-#logs success rate after rollout workers complete
+#logs success rate after rollout workers complete (each epoch)
 if os.path.exists("logs_success_rate_per_epoch.txt"):
   os.remove("logs_success_rate_per_epoch.txt")
 
 #logs success being set in rollout.py
 if os.path.exists("logs_common_is_success.txt"):
   os.remove("logs_common_is_success.txt")
+
+#delete logs folder
+if os.path.exists("/tmp/openaiGA"):
+  os.remove("/tmp/openaiGA")
 
 # First, define function that will be used to evaluate the fitness
 def fitness_function(genome):
@@ -90,6 +94,7 @@ def fitness_function(genome):
 
     ##tracking time to execute one run
     programExecutionTime = time.time() - start_time  # seconds
+    programExecutionTime = programExecutionTime / (60)  # minutes
     with open('logs_common.txt', 'a') as output:
         output.write("======Run " + str(timesEvaluated) + " took " + str(programExecutionTime) + " minutes to complete=========" + "\n")
 

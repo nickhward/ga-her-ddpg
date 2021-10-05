@@ -105,10 +105,11 @@ class RolloutWorker:
                     curr_o_new, _, _, info = self.envs[i].step(u[i])
                     if 'is_success' in info:
                         success[i] = info['is_success']
-                        # with open('logs_common_is_success.txt', 'a') as output:
-                        #     output.write(str(info['is_success']) + "\n")
+                        with open('logs_common_is_success.txt', 'a') as output:
+                            output.write(str(info['is_success']) + "\n")
                     o_new[i] = curr_o_new['observation']
-                    ag_new[i] = curr_o_new['achieved_goal']
+                    # ag_new[i] = curr_o_new['achieved_goal']
+                    ag_new[i] = success[i] = info['is_success']
                     for idx, key in enumerate(self.info_keys):
                         info_values[idx][t, i] = info[key]
                     if self.render:

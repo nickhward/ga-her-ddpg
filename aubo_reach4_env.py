@@ -67,7 +67,7 @@ class PickbotEnv(gym.GoalEnv):
         self._random_position = random_position
         self._use_object_type = use_object_type
         self._populate_object = populate_object
-        self.rewardThreshold = 0.62
+        self.rewardThreshold = 0.55
 
         # Assign MsgTypes
         self.joints_state = JointState()
@@ -411,6 +411,7 @@ class PickbotEnv(gym.GoalEnv):
         object = self.goal
         # rel_pos = self.get_distance_gripper_to_object(self.joints_state.position)
 
+        # achieved_goal = np.asarray(self.joints_state.position)
         achieved_goal = np.asarray(self.joints_state.position)
         rel_pos = achieved_goal - object
         relative_pose = np.asarray(rel_pos)

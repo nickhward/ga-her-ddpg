@@ -1,3 +1,150 @@
-======Setting Parameters value=========
-Tau = 0.969 || Gamma = 0.915 || Q_learning = 0.999 || pi_learning = 0.818 || random_epsilon = 0.982 || noise_epsilon = 0.348
-======Run 1 took 0.0003306865692138672 minutes to complete=========
+Total epochs are: 20
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 20
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 20
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 20
+Current epoch: 0
+Calling rollout workers for training
+Total epochs are: 20
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+cycle 0
+Total epochs are: 20
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+episode generated for cycle 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+episode generated for cycle 1
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+episode generated for cycle 2
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+episode generated for cycle 3
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+episode generated for cycle 4
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 0
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+batch 1
+starting test
+starting test
+starting test
+starting test
+starting test
+starting test
+Successful epoch value FOUND at 1epochs
+Successful epoch value FOUND at 1epochs
+Successful epoch value FOUND at 1epochs
+Successful epoch value FOUND at 1epochs
+Successful epoch value FOUND at 1epochs
+Successful epoch value FOUND at 1epochs

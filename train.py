@@ -35,6 +35,8 @@ def train(policy, rollout_worker, evaluator,
     periodic_policy_path = os.path.join(logger.get_dir(), 'policy_{}.pkl')
 
     logger.info("Training...")
+    with open('logs_common_is_success.txt', 'a') as output:
+        output.write("==========Training============" + "\n")
     best_success_rate = -1
     for epoch in range(n_epochs):
         with open('logs_common.txt', 'a') as output:
@@ -60,6 +62,8 @@ def train(policy, rollout_worker, evaluator,
             policy.update_target_net()
 
         # test
+        with open('logs_common_is_success.txt', 'a') as output:
+            output.write("==========Testing============" + "\n")
         with open('logs_common.txt', 'a') as output:
             output.write("starting test" + "\n")
         evaluator.clear_history()
@@ -82,11 +86,11 @@ def train(policy, rollout_worker, evaluator,
         # print('Success rate is {}'.format(rollout_worker.current_success_rate()))
 
         # save the policy if it's better than the previous ones
-        # success_rate = mpi_average(evaluator.current_success_rate())
-        # print('Success rate is {}'.format(mpi_average(evaluator.current_success_rate())))
+        success_rate = mpi_average(evaluator.current_success_rate())
+        print('Success rate is {}'.format(mpi_average(evaluator.current_success_rate())))
 
-        success_rate = mpi_average(rollout_worker.current_success_rate())
-        print('Success rate is {}'.format(mpi_average(rollout_worker.current_success_rate())))
+        # success_rate = mpi_average(rollout_worker.current_success_rate())
+        # print('Success rate is {}'.format(mpi_average(rollout_worker.current_success_rate())))
         with open('logs_success_rate_per_epoch.txt', 'a') as output:
             output.write(str(success_rate) + "\n")
         #checking if success rate has reached close to maximum, if so, return number of epochs
@@ -102,7 +106,7 @@ def train(policy, rollout_worker, evaluator,
             logger.info('Maximum success rate not reached. Saving maximum epochs to file...')
             with open('epochs.txt', 'w') as output:
                 output.write(str(n_epochs))
-            sys.exit()   
+            sys.exit()
 
         if rank == 0 and success_rate >= best_success_rate and save_policies:
             best_success_rate = success_rate
@@ -200,11 +204,15 @@ def launch(
     }
 
     eval_params = {
-        'exploit': True,
-        'use_target_net': params['test_with_polyak'],
+        # 'exploit': True,
+        # 'use_target_net': params['test_with_polyak'],
+        # 'use_demo_states': False,
+        # 'compute_Q': True,
+        #'T': params['T'],
+        'exploit': False,
+        'use_target_net': False,
         'use_demo_states': False,
         'compute_Q': True,
-        #'T': params['T'],
     }
 
     #for name in ['T', 'rollout_batch_size', 'gamma', 'noise_eps', 'random_eps']:
