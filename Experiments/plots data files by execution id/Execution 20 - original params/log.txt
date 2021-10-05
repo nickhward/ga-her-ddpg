@@ -1,0 +1,131 @@
+Logging to /tmp/openaiGA
+T: 5
+_Q_lr: 0.001
+_action_l2: 1.0
+_batch_size: 256
+_buffer_size: 1000000
+_clip_obs: 200.0
+_hidden: 256
+_layers: 3
+_max_u: 1.0
+_network_class: baselines.her.actor_critic:ActorCritic
+_norm_clip: 5
+_norm_eps: 0.01
+_pi_lr: 0.001
+_polyak: 0.95
+_relative_goals: False
+_scope: ddpg
+ddpg_params: {'buffer_size': 1000000, 'hidden': 256, 'layers': 3, 'network_class': 'baselines.her.actor_critic:ActorCritic', 'polyak': 0.95, 'batch_size': 256, 'Q_lr': 0.001, 'pi_lr': 0.001, 'norm_eps': 0.01, 'norm_clip': 5, 'max_u': 1.0, 'action_l2': 1.0, 'clip_obs': 200.0, 'scope': 'ddpg', 'relative_goals': False}
+env_name: AuboReach-v1
+gamma: 0.98
+make_env: <function prepare_params.<locals>.make_env at 0x7fab72b7ef80>
+n_batches: 2
+n_cycles: 5
+n_test_rollouts: 7
+noise_eps: 0.2
+random_eps: 0.3
+replay_k: 4
+replay_strategy: future
+rollout_batch_size: 2
+test_with_polyak: False
+Creating a DDPG agent with action space 6 x 1.0...
+Training...
+-------------------------------------------
+| epoch              | 0                  |
+| stats_g/mean       | 0.5958791          |
+| stats_g/std        | 0.7084995          |
+| stats_o/mean       | 0.38676468         |
+| stats_o/std        | 0.07409456         |
+| test/episode       | 14.0               |
+| test/mean_Q        | -5.9083476         |
+| test/success_rate  | 0.6190476190476191 |
+| train/episode      | 10.0               |
+| train/success_rate | 0.8833333333333334 |
+-------------------------------------------
+New best success rate: 0.6190476190476191. Saving policy to /tmp/openaiGA/policy_best.pkl ...
+Saving periodic policy to /tmp/openaiGA/policy_0.pkl ...
+-------------------------------------------
+| epoch              | 1                  |
+| stats_g/mean       | 0.34922767         |
+| stats_g/std        | 0.7425086          |
+| stats_o/mean       | 0.39059404         |
+| stats_o/std        | 0.05457926         |
+| test/episode       | 28.0               |
+| test/mean_Q        | -4.3015175         |
+| test/success_rate  | 0.2380952380952381 |
+| train/episode      | 20.0               |
+| train/success_rate | 0.6000000000000001 |
+-------------------------------------------
+--------------------------------------------
+| epoch              | 2                   |
+| stats_g/mean       | 0.23617105          |
+| stats_g/std        | 0.70810384          |
+| stats_o/mean       | 0.39188743          |
+| stats_o/std        | 0.045765985         |
+| test/episode       | 42.0                |
+| test/mean_Q        | -3.8150074          |
+| test/success_rate  | 0.19047619047619047 |
+| train/episode      | 30.0                |
+| train/success_rate | 0.4666666666666666  |
+--------------------------------------------
+--------------------------------------------
+| epoch              | 3                   |
+| stats_g/mean       | 0.20197015          |
+| stats_g/std        | 0.69716954          |
+| stats_o/mean       | 0.39253727          |
+| stats_o/std        | 0.04047328          |
+| test/episode       | 56.0                |
+| test/mean_Q        | -4.921265           |
+| test/success_rate  | 0.08333333333333333 |
+| train/episode      | 40.0                |
+| train/success_rate | 0.425               |
+--------------------------------------------
+--------------------------------------------
+| epoch              | 4                   |
+| stats_g/mean       | 0.16081072          |
+| stats_g/std        | 0.68034095          |
+| stats_o/mean       | 0.39292827          |
+| stats_o/std        | 0.036847126         |
+| test/episode       | 70.0                |
+| test/mean_Q        | -5.7371106          |
+| test/success_rate  | 0.2738095238095238  |
+| train/episode      | 50.0                |
+| train/success_rate | 0.37333333333333335 |
+--------------------------------------------
+--------------------------------------------
+| epoch              | 5                   |
+| stats_g/mean       | 0.13554041          |
+| stats_g/std        | 0.6684812           |
+| stats_o/mean       | 0.3931894           |
+| stats_o/std        | 0.034163572         |
+| test/episode       | 84.0                |
+| test/mean_Q        | -6.0906663          |
+| test/success_rate  | 0.10714285714285714 |
+| train/episode      | 60.0                |
+| train/success_rate | 0.33888888888888885 |
+--------------------------------------------
+Saving periodic policy to /tmp/openaiGA/policy_5.pkl ...
+-------------------------------------------
+| epoch              | 6                  |
+| stats_g/mean       | 0.110277295        |
+| stats_g/std        | 0.66836137         |
+| stats_o/mean       | 0.39337602         |
+| stats_o/std        | 0.032074783        |
+| test/episode       | 98.0               |
+| test/mean_Q        | -6.525207          |
+| test/success_rate  | 0.2261904761904762 |
+| train/episode      | 70.0               |
+| train/success_rate | 0.319047619047619  |
+-------------------------------------------
+--------------------------------------------
+| epoch              | 7                   |
+| stats_g/mean       | 0.092930995         |
+| stats_g/std        | 0.66358376          |
+| stats_o/mean       | 0.39351615          |
+| stats_o/std        | 0.030388428         |
+| test/episode       | 112.0               |
+| test/mean_Q        | -7.184917           |
+| test/success_rate  | 0.2261904761904762  |
+| train/episode      | 80.0                |
+| train/success_rate | 0.29583333333333334 |
+--------------------------------------------
