@@ -28,3 +28,6 @@ ga.run #30 ga.py
 
 
 ga run (30) -> epoch (50) -> cycle (50) -> episode (100) -> self.T in rollout.py (500) -> batch (40)
+
+# mobile manipulator code
+https://github.com/robowork/autonomous_mobile_manipulation
