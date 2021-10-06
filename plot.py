@@ -116,3 +116,4 @@ for env_id in sorted(data.keys()):
     plt.ylabel('Median Success Rate')
     plt.legend()
     plt.savefig(os.path.join(args.dir, 'fig_{}.png'.format(env_id)))
+    plt.show()

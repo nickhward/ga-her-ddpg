@@ -67,7 +67,7 @@ class PickbotEnv(gym.GoalEnv):
         self._random_position = random_position
         self._use_object_type = use_object_type
         self._populate_object = populate_object
-        self.rewardThreshold = 0.62
+        self.rewardThreshold = 0.58
 
         # Assign MsgTypes
         self.joints_state = JointState()

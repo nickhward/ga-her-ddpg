@@ -212,15 +212,15 @@ def launch(
     }
 
     eval_params = {
-        # 'exploit': True,
-        # 'use_target_net': params['test_with_polyak'],
-        # 'use_demo_states': False,
-        # 'compute_Q': True,
-        #'T': params['T'],
-        'exploit': False,
-        'use_target_net': False,
+        'exploit': True,
+        'use_target_net': params['test_with_polyak'],
         'use_demo_states': False,
         'compute_Q': True,
+        #'T': params['T'],
+        # 'exploit': False,
+        # 'use_target_net': False,
+        # 'use_demo_states': False,
+        # 'compute_Q': True,
     }
 
     #for name in ['T', 'rollout_batch_size', 'gamma', 'noise_eps', 'random_eps']:
