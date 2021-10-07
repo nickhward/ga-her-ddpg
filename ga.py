@@ -15,28 +15,31 @@ if os.path.exists("logs_fitness_function_invoked.txt"):
   os.remove("logs_fitness_function_invoked.txt")
 
 #tracks success rate for each action (all steps throughout the program execution)
-if os.path.exists("logs_success_rate.txt"):
-  os.remove("logs_success_rate.txt")
+if os.path.exists("Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate.txt"):
+  os.remove("Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate.txt")
 
 #logs reward for all actions
-if os.path.exists("rewards.csv"):
-  os.remove("rewards.csv")
+if os.path.exists("Experiments/plots data files by execution id/Execution 23 - optimal params/rewards.csv"):
+  os.remove("Experiments/plots data files by execution id/Execution 23 - optimal params/rewards.csv")
 
 #saves epoch value for success rate > threshold (train.py)
 if os.path.exists("epochs.txt"):
   os.remove("epochs.txt")
 
 #logs general logging comments
-if os.path.exists("logs_common.txt"):
-  os.remove("logs_common.txt")
+if os.path.exists("Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt"):
+  os.remove("Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt")
 
 #logs success rate after rollout workers complete (each epoch)
-if os.path.exists("logs_success_rate_per_epoch.txt"):
-  os.remove("logs_success_rate_per_epoch.txt")
+if os.path.exists(
+        "Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate_per_epoch.txt"):
+  os.remove(
+      "Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate_per_epoch.txt")
 
 #logs success being set in rollout.py
-if os.path.exists("logs_common_is_success.txt"):
-  os.remove("logs_common_is_success.txt")
+if os.path.exists(
+        "Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common_is_success.txt"):
+  os.remove("Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common_is_success.txt")
 
 #delete logs folder
 if os.path.exists("/tmp/openaiGA"):
@@ -75,7 +78,7 @@ def fitness_function(genome):
     logdir ='/tmp/openaiGA'
     num_cpu = 6
 
-    with open('logs_common.txt', 'a') as output:
+    with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
         output.write("======Setting Parameters value========="+ "\n")
         output.write("Tau = " + str(polyak))
         output.write(" || Gamma = " + str(gamma))
@@ -95,7 +98,7 @@ def fitness_function(genome):
     ##tracking time to execute one run
     programExecutionTime = time.time() - start_time  # seconds
     programExecutionTime = programExecutionTime / (60)  # minutes
-    with open('logs_common.txt', 'a') as output:
+    with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
         output.write("======Run " + str(timesEvaluated) + " took " + str(programExecutionTime) + " minutes to complete=========" + "\n")
 
     file = open('epochs.txt', 'r')
@@ -186,6 +189,6 @@ fitness_vector = ga.get_fitness_vector()
 # time tracking
 programExecutionTime = time.time() - start_time #seconds
 programExecutionTime = programExecutionTime/(60*60) #hours
-with open('logs_common.txt', 'a') as output:
+with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
     output.write("======Total program execution time is " + str(programExecutionTime) +" hours=========" + "\n")
 print("--- %s seconds ---" % (time.time() - start_time))

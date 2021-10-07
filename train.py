@@ -35,12 +35,12 @@ def train(policy, rollout_worker, evaluator,
     periodic_policy_path = os.path.join(logger.get_dir(), 'policy_{}.pkl')
 
     logger.info("Training...")
-    with open('logs_common_is_success.txt', 'a') as output:
+    with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common_is_success.txt', 'a') as output:
         output.write("==========Training============" + "\n")
     best_success_rate = -1
     for epoch in range(n_epochs):
         start_time = time.time()
-        with open('logs_common.txt', 'a') as output:
+        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
             output.write("Total epochs are: " + str(n_epochs)+"\n")
             output.write("Current epoch: " + str(epoch) + "\n")
             output.write("Calling rollout workers for training" + "\n")
@@ -50,22 +50,23 @@ def train(policy, rollout_worker, evaluator,
             #logger.info(config.DEFAULT_PARAMS['_polyak'])
             #config.DEFAULT_PARAMS['_polyak'] = round(random.uniform(0, 1), 3)
             #logger.info('polyak is :')
-            with open('logs_common.txt', 'a') as output:
+            with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
                 output.write("cycle " + str(cycle) + "\n")
             episode = rollout_worker.generate_rollouts()
-            with open('logs_common.txt', 'a') as output:
+            with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
                 output.write("episode generated for cycle " + str(cycle) + "\n")
             policy.store_episode(episode)
             for batch in range(n_batches):
-                with open('logs_common.txt', 'a') as output:
+                with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
                     output.write("batch " + str(batch) + "\n")
                 policy.train()
             policy.update_target_net()
 
         # test
-        with open('logs_common_is_success.txt', 'a') as output:
+        with open(
+                'Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common_is_success.txt', 'a') as output:
             output.write("==========Testing============" + "\n")
-        with open('logs_common.txt', 'a') as output:
+        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
             output.write("starting test" + "\n")
         evaluator.clear_history()
         for _ in range(n_test_rollouts):
@@ -86,7 +87,7 @@ def train(policy, rollout_worker, evaluator,
         #calculate each epoch time
         programExecutionTime = time.time() - start_time  # seconds
         programExecutionTime = programExecutionTime / (60)  # minutes
-        with open('logs_common.txt', 'a') as output:
+        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
             output.write("======Epoch " + str(epoch) + " took " + str(
                 programExecutionTime) + " minutes to complete=========" + "\n")
 
@@ -99,22 +100,23 @@ def train(policy, rollout_worker, evaluator,
 
         # success_rate = mpi_average(rollout_worker.current_success_rate())
         # print('Success rate is {}'.format(mpi_average(rollout_worker.current_success_rate())))
-        with open('logs_success_rate_per_epoch.txt', 'a') as output:
+        with open(
+                'Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate_per_epoch.txt', 'a') as output:
             output.write(str(success_rate) + "\n")
         #checking if success rate has reached close to maximum, if so, return number of epochs
         if success_rate >= 0.80: #0.85
             logger.info('Saving epochs to file...')
-            with open('logs_common.txt', 'a') as output:
+            with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common.txt', 'a') as output:
                 output.write("Successful epoch value FOUND at " + str(epoch+1) + "epochs" + "\n")
             with open('epochs.txt', 'w') as output:
                 output.write(str(epoch+1))
             #Exit training if maximum success rate reached
-            sys.exit()
+            # sys.exit()
         if epoch==(n_epochs-1):
             logger.info('Maximum success rate not reached. Saving maximum epochs to file...')
             with open('epochs.txt', 'w') as output:
                 output.write(str(n_epochs))
-            sys.exit()
+            # sys.exit()
 
         if rank == 0 and success_rate >= best_success_rate and save_policies:
             best_success_rate = success_rate
@@ -212,15 +214,15 @@ def launch(
     }
 
     eval_params = {
-        'exploit': True,
-        'use_target_net': params['test_with_polyak'],
-        'use_demo_states': False,
-        'compute_Q': True,
-        #'T': params['T'],
-        # 'exploit': False,
-        # 'use_target_net': False,
+        # 'exploit': True,
+        # 'use_target_net': params['test_with_polyak'],
         # 'use_demo_states': False,
         # 'compute_Q': True,
+        #'T': params['T'],
+        'exploit': False,
+        'use_target_net': False,
+        'use_demo_states': False,
+        'compute_Q': True,
     }
 
     #for name in ['T', 'rollout_batch_size', 'gamma', 'noise_eps', 'random_eps']:

@@ -333,7 +333,7 @@ class PickbotEnv(gym.GoalEnv):
         print(reward)
         print('==========================================================')
         row_list = [reward, self.counter]
-        with open('rewards.csv', 'a', encoding='UTF8', newline='') as f:
+        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/rewards.csv', 'a', encoding='UTF8', newline='') as f:
             writer = csv.writer(f)
 
             # write the header
@@ -422,7 +422,7 @@ class PickbotEnv(gym.GoalEnv):
         threshold = 0.62
         d = self.goal_distance(achieved_goal, desired_goal)
         calc_d = 1 - (0.12 + 0.88 * (d / 10))
-        with open('logs_success_rate.txt', 'a') as output:
+        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate.txt', 'a') as output:
             output.write(str(calc_d))
             if calc_d >= threshold:
                 output.write(" :SUCCESS" + "\n")
