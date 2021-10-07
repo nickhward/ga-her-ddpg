@@ -39,7 +39,7 @@ from moveit_msgs.msg import MoveGroupActionFeedback
 register(
     id='AuboReach-v1',
     entry_point='aubo_reach4_env:PickbotEnv',
-    max_episode_steps=30, #100
+    max_episode_steps=10, #100
 )
 
 
@@ -303,7 +303,7 @@ class PickbotEnv(gym.GoalEnv):
         reward = self.compute_reward(np.asarray(action), self.goal, info)
         # percentage = 1 - (0.12 + 0.88 * (abs(reward) / 10))
         # print("pecentage success possible: {}".format(percentage))
-        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/logs_success_rate.txt', 'a') as output:
+        with open('logs_success_rate.txt', 'a') as output:
             output.write(str(self.calculatedReward))
             if self.calculatedReward >= self.rewardThreshold:
                 output.write(" :SUCCESS" + "\n")
@@ -338,7 +338,7 @@ class PickbotEnv(gym.GoalEnv):
         print(reward)
         print('==========================================================')
         row_list = [reward, self.counter]
-        with open('Experiments/plots data files by execution id/Execution 23 - optimal params/rewards.csv', 'a', encoding='UTF8', newline='') as f:
+        with open('rewards.csv', 'a', encoding='UTF8', newline='') as f:
             writer = csv.writer(f)
 
             # write the header

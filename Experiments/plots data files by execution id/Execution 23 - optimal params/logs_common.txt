@@ -83462,3 +83462,23 @@ Total epochs are: 70
 Current epoch: 0
 Calling rollout workers for training
 cycle 0
+Total epochs are: 70
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 70
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 70
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 70
+Current epoch: 0
+Calling rollout workers for training
+cycle 0
+Total epochs are: 70
+Current epoch: 0
+Calling rollout workers for training
+cycle 0

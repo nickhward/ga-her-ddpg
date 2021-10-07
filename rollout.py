@@ -30,7 +30,7 @@ class RolloutWorker:
             history_len (int): length of history for statistics smoothing
             render (boolean): whether or not to render the rollouts
         """
-        self.T = 30   #100
+        self.T = 10   #100
         self.envs = [make_env() for _ in range(rollout_batch_size)]
         assert self.T > 0
 
@@ -106,7 +106,7 @@ class RolloutWorker:
                     if 'is_success' in info:
                         success[i] = info['is_success']
                         with open(
-                                'Experiments/plots data files by execution id/Execution 23 - optimal params/logs_common_is_success.txt', 'a') as output:
+                                'logs_common_is_success.txt', 'a') as output:
                             output.write(str(info['is_success']) + "\n")
                     o_new[i] = curr_o_new['observation']
                     ag_new[i] = curr_o_new['achieved_goal']
