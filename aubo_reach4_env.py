@@ -67,7 +67,7 @@ class PickbotEnv(gym.GoalEnv):
         self._random_position = random_position
         self._use_object_type = use_object_type
         self._populate_object = populate_object
-        self.rewardThreshold = 0.56
+        self.rewardThreshold = 0.25
 
         # Assign MsgTypes
         self.joints_state = JointState()
@@ -80,7 +80,7 @@ class PickbotEnv(gym.GoalEnv):
 
         self.publisher_to_moveit_object = JointArrayPub()
 
-        rospy.Subscriber("/joint_states", JointState, self.joints_state_callback)
+        # rospy.Subscriber("/joint_states", JointState, self.joints_state_callback)
 
         rospy.Subscriber("/pickbot/movement_complete", Bool, self.movement_complete_callback)
         rospy.Subscriber("/move_group/feedback", MoveGroupActionFeedback, self.move_group_action_feedback_callback,
@@ -116,7 +116,7 @@ class PickbotEnv(gym.GoalEnv):
         # self.goal = np.array([1.84, 0.71, -1.01, -1.07, -1.40, -1.66])
         self.goal = np.array([-0.503, 0.605, -1.676, -1.597, -1.527, -0.036])
 
-        self.check_joint_states()
+        # self.check_joint_states()
         obs = self.get_obs()
         self.observation_space = spaces.Dict(
             dict(
@@ -169,7 +169,8 @@ class PickbotEnv(gym.GoalEnv):
         # if self.reward_type == "sparse":
         #    return -(d > self.distance_threshold).astype(np.float32)
         # else:
-        return -d
+        # return -d
+        return 1/d
 
         # success = self._is_success(achieved_goal, goal).astype(np.float32)
         # return success
@@ -212,26 +213,26 @@ class PickbotEnv(gym.GoalEnv):
         #     pass
         # print(">>>>>>>>>>>>>>>>>>> RESET: Waiting complete")
 
-        start_ros_time = rospy.Time.now()
-        while True:
-            # Check collision:
-            # invalid_collision = self.get_collisions()
-            # if invalid_collision:
-            #     print(">>>>>>>>>> Collision: RESET <<<<<<<<<<<<<<<")
-            #     observation = self.get_obs()
-            #     reward = UMath.compute_reward(observation, -200, True)
-            #     observation = self.get_obs()
-            #     print("Test Joint: {}".format(np.around(observation[1:7], decimals=3)))
-            #     return U.get_state(observation), reward, True, {}
-
-            elapsed_time = rospy.Time.now() - start_ros_time
-            if np.isclose(init_joint_pos, self.joints_state.position, rtol=0.0, atol=0.01).all():
-                break
-            elif elapsed_time > rospy.Duration(2):  # time out
-                break
+        # start_ros_time = rospy.Time.now()
+        # while True:
+        #     # Check collision:
+        #     # invalid_collision = self.get_collisions()
+        #     # if invalid_collision:
+        #     #     print(">>>>>>>>>> Collision: RESET <<<<<<<<<<<<<<<")
+        #     #     observation = self.get_obs()
+        #     #     reward = UMath.compute_reward(observation, -200, True)
+        #     #     observation = self.get_obs()
+        #     #     print("Test Joint: {}".format(np.around(observation[1:7], decimals=3)))
+        #     #     return U.get_state(observation), reward, True, {}
+        #
+        #     elapsed_time = rospy.Time.now() - start_ros_time
+        #     if np.isclose(init_joint_pos, self.joints_state.position, rtol=0.0, atol=0.01).all():
+        #         break
+        #     elif elapsed_time > rospy.Duration(2):  # time out
+        #         break
 
         # self.set_target_object(random_object=self._random_object, random_position=self._random_position)
-        self._check_all_systems_ready()
+        # self._check_all_systems_ready()
 
         observation = self.get_obs()
 
@@ -426,7 +427,16 @@ class PickbotEnv(gym.GoalEnv):
 
     def _is_success(self, achieved_goal, desired_goal):
         d = self.goal_distance(achieved_goal, desired_goal)
-        calc_d = 1 - (0.12 + 0.88 * (d / 10))
+
+        # old calculation
+        # calc_d = 1 - (0.12 + 0.88 * (d / 10))
+
+        # new calculation
+        if d != 0:
+            calc_d = 1 / d
+        else:
+            calc_d = 0
+
         self.calculatedReward = calc_d
         return (calc_d >= self.rewardThreshold).astype(np.float32)
 
