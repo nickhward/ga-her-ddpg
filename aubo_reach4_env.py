@@ -39,7 +39,7 @@ from moveit_msgs.msg import MoveGroupActionFeedback
 register(
     id='AuboReach-v1',
     entry_point='aubo_reach4_env:PickbotEnv',
-    max_episode_steps=10, #100
+    max_episode_steps=30, #100
 )
 
 
@@ -67,7 +67,7 @@ class PickbotEnv(gym.GoalEnv):
         self._random_position = random_position
         self._use_object_type = use_object_type
         self._populate_object = populate_object
-        self.rewardThreshold = 0.25
+        self.rewardThreshold = 0.5
 
         # Assign MsgTypes
         self.joints_state = JointState()
@@ -77,6 +77,7 @@ class PickbotEnv(gym.GoalEnv):
         self.movement_complete.data = False
         self.moveit_action_feedback = MoveGroupActionFeedback()
         self.feedback_list = []
+        self.new_action = []
 
         self.publisher_to_moveit_object = JointArrayPub()
 
@@ -115,7 +116,7 @@ class PickbotEnv(gym.GoalEnv):
         # self.goal = np.array([-1.7, -1.78, -1.77, 0.013, 1.69, 0.00023])
         # self.goal = np.array([1.84, 0.71, -1.01, -1.07, -1.40, -1.66])
         self.goal = np.array([-0.503, 0.605, -1.676, -1.597, -1.527, -0.036])
-
+        self.new_action = self.goal # [0, 0, 0, 0, 0, 0]
         # self.check_joint_states()
         obs = self.get_obs()
         self.observation_space = spaces.Dict(
@@ -233,7 +234,7 @@ class PickbotEnv(gym.GoalEnv):
 
         # self.set_target_object(random_object=self._random_object, random_position=self._random_position)
         # self._check_all_systems_ready()
-
+        self.new_action = init_joint_pos
         observation = self.get_obs()
 
         self._update_episode()
@@ -269,7 +270,7 @@ class PickbotEnv(gym.GoalEnv):
         self.movement_complete.data = False
         # clipped_action = np.clip(action, self.action_space.low, self.action_space.high)
         # 1) Read last joint positions by getting the observation before acting
-        old_observation = self.get_obs()
+        # old_observation = self.get_obs()
 
         # 2) Get the new joint positions according to chosen action (actions here are the joint increments)
         # if self._joint_increment is None:
@@ -285,15 +286,15 @@ class PickbotEnv(gym.GoalEnv):
         # while not self.movement_complete.data:
         #     pass
 
-        start_ros_time = rospy.Time.now()
-        while True:
-            elapsed_time = rospy.Time.now() - start_ros_time
-            if np.isclose(action, self.joints_state.position, rtol=0.0, atol=0.01).all():
-                break
-            elif elapsed_time > rospy.Duration(2):  # time out
-                break
+        # start_ros_time = rospy.Time.now()
+        # while True:
+        #     elapsed_time = rospy.Time.now() - start_ros_time
+        #     if np.isclose(action, self.joints_state.position, rtol=0.0, atol=0.01).all():
+        #         break
+        #     elif elapsed_time > rospy.Duration(2):  # time out
+        #         break
         # time.sleep(s
-
+        self.new_action = action
         # 4) Get new observation and update min_distance after performing the action
         obs = self.get_obs()
 
@@ -393,18 +394,33 @@ class PickbotEnv(gym.GoalEnv):
         """
         joint_states = self.joints_state
         print("==================================================================================")
-        shoulder_joint_state = joint_states.position[0]
-        foreArm_joint_state = joint_states.position[1]
-        upperArm_joint_state = joint_states.position[2]
-        wrist1_joint_state = joint_states.position[3]
-        wrist2_joint_state = joint_states.position[4]
-        wrist3_joint_state = joint_states.position[5]
+        # if(len(action)>0):
+        #     print(joint_states)
+        #     if(joint_states.position[0] != action[0]):
+        #         shoulder_joint_state = joint_states.position[0]
+        #     if (joint_states.position[1] != action[1]):
+        #         foreArm_joint_state = joint_states.position[1]
+        #     if (joint_states.position[2] != action[2]):
+        #         upperArm_joint_state = joint_states.position[2]
+        #     if (joint_states.position[3] != action[3]):
+        #         wrist1_joint_state = joint_states.position[3]
+        #     if (joint_states.position[4] != action[4]):
+        #         wrist2_joint_state = joint_states.position[4]
+        #     if (joint_states.position[5] != action[5]):
+        #         wrist3_joint_state = joint_states.position[5]
 
-        for joint in joint_states.position:
-            if joint > 2 * math.pi or joint < -2 * math.pi:
-                print(joint_states.name)
-                print(np.around(joint_states.position, decimals=3))
-                sys.exit("Joint exceeds limit")
+        if(len(self.new_action)>0):
+            shoulder_joint_state = self.new_action[0]
+            foreArm_joint_state = self.new_action[1]
+            upperArm_joint_state = self.new_action[2]
+            wrist1_joint_state = self.new_action[3]
+            wrist2_joint_state = self.new_action[4]
+            wrist3_joint_state = self.new_action[5]
+        # for joint in joint_states.position:
+        #     if joint > 2 * math.pi or joint < -2 * math.pi:
+        #         print(joint_states.name)
+        #         print(np.around(joint_states.position, decimals=3))
+        #         sys.exit("Joint exceeds limit")
 
         self.curr_joint = np.array(
             [shoulder_joint_state, foreArm_joint_state, upperArm_joint_state, wrist1_joint_state, wrist2_joint_state,
@@ -413,7 +429,7 @@ class PickbotEnv(gym.GoalEnv):
         # rel_pos = self.get_distance_gripper_to_object(self.joints_state.position)
 
         # achieved_goal = np.asarray(self.joints_state.position)
-        achieved_goal = np.asarray(self.joints_state.position)
+        achieved_goal = np.asarray(self.new_action)
         rel_pos = achieved_goal - object
         relative_pose = np.asarray(rel_pos)
         obs = np.concatenate([achieved_goal, relative_pose])

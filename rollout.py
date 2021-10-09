@@ -30,7 +30,7 @@ class RolloutWorker:
             history_len (int): length of history for statistics smoothing
             render (boolean): whether or not to render the rollouts
         """
-        self.T = 10   #100
+        self.T = 30   #100
         self.envs = [make_env() for _ in range(rollout_batch_size)]
         assert self.T > 0
 
