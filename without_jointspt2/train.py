@@ -182,7 +182,7 @@ def launch(
     }
 
     eval_params = {
-        'exploit': False,
+        'exploit': True,
         'use_target_net': params['test_with_polyak'],
         'use_demo_states': False,
         'compute_Q': True,
