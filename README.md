@@ -84,7 +84,7 @@ First clone the repository
 git clone <github url> 
 ```
 Training without simulation first, allows for the use of multiple CPU cores. 
-To begin training using default values from openai: 
+To begin training using default values from openai (make sure to comment out lines 89 and 94 in train.py inorder for the python file to work as intended): 
 ```
 cd ~/simulation_branch
 
@@ -97,7 +97,7 @@ To begin training using the GA_her+ddpg parameters generated from the python scr
 python3 train.py --polyak_value=0.924 --gamma_value=0.949 --q_learning=0.001 --pi_learning=0.001 --random_epsilon=0.584 --noise_epsilon=0.232
 ```
 
-If you would like to recieve your own GA optimized parameters run:
+If you would like to recieve your own GA optimized parameters run (make sure to uncomment the line 89 and 94 in train.py inorder for ga.py to work as intended):
 ```
 python3 ga.py
 ```
