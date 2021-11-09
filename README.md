@@ -78,6 +78,7 @@ source devel/setup.bash
 rosdep install openai_ros
 ```
 **Training**
+
 First clone the repository
 ```
 git clone <github url> 
