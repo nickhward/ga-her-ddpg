@@ -44,7 +44,7 @@ def fitness_function(genome):
     epochs_default = 20 #80
     env = 'AuboReach-v1'
     logdir ='/tmp/openaiGA'
-    num_cpu = 1
+    num_cpu = 4
 
     query = "python3 -m train --env="+env+" --logdir="+logdir+" --n_epochs="+str(epochs_default)+" --num_cpu="+str(num_cpu) + " --polyak_value="+ str(polyak) + " --gamma_value=" + str(gamma) + " --q_learning=" + str(Q_lr) + " --pi_learning=" + str(pi_lr) + " --random_epsilon=" + str(random_eps) + " --noise_epsilon=" + str(noise_eps)
 
