@@ -131,7 +131,7 @@ To run the connection between the robot gym environment and moveit run:
 python2.7 moveit_motion_control.py
 ```
 
-Run the genetic algorithm on her+ddpg while still in newher directory:
+Go to the next section on how to see how play this simulation or real robot while still in simulation branch directory with the best policy:
 
 Gym Environments available for GA-DRL execution (can be changes in ga.py):
 - AuboReach-v0 - executes joint states with moveit
@@ -139,7 +139,7 @@ Gym Environments available for GA-DRL execution (can be changes in ga.py):
 
 
 ## How to play the environment with any chosen policy file
-You can see the environment in action by providing the policy file:
+You can see the environment in action by providing the policy file (either using the default parameters policy or the GA parameters policy):
 ```
 python3 -m play.py <file_path>
 python3 -m play.py /tmp/newlog/policy_best.pkl
