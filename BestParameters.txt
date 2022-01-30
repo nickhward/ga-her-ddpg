@@ -1,0 +1,73 @@
+
+Epochs taken to converge : 0
+Tau = 0.924
+Gamma = 0.949
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.584
+noise_epsilon = 0.232
+
+=================================================
+Epochs taken to converge : 1
+Tau = 0.589
+Gamma = 0.85
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.1
+noise_epsilon = 0.226
+
+=================================================
+Epochs taken to converge : 2
+Tau = 0.5
+Gamma = 0.5
+Q_learning = 0.001
+pi_learning = 0.0004
+random_epsilon = 0.1
+noise_epsilon = 0.1
+
+=================================================
+Epochs taken to converge : -8
+Tau = 0.846
+Gamma = 0.998
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.313
+noise_epsilon = 0.992
+
+=================================================
+Epochs taken to converge : 9
+Tau = 0.902
+Gamma = 0.991
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.345
+noise_epsilon = 0.646
+
+=================================================
+Epochs taken to converge : 7
+Tau = 0.861
+Gamma = 0.989
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.913
+noise_epsilon = 0.617
+
+=================================================
+Epochs taken to converge : 6
+Tau = 0.924
+Gamma = 0.988
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.912
+noise_epsilon = 0.748
+
+=================================================
+Epochs taken to converge : 8
+Tau = 0.772
+Gamma = 0.993
+Q_learning = 0.001
+pi_learning = 0.001
+random_epsilon = 0.961
+noise_epsilon = 0.462
+
+=================================================
